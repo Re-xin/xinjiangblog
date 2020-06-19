@@ -1,0 +1,1266 @@
+2020-06-11 09:56:46.031  INFO 8000 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Starting BlogApplication on LAPTOP-8G1SU5VT with PID 8000 (F:\testprojects\xinjiang\target\classes started by 陈智彬 in F:\testprojects\xinjiang)
+2020-06-11 09:56:46.035 DEBUG 8000 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-06-11 09:56:46.035  INFO 8000 --- [restartedMain] com.xinjiang.blog.BlogApplication        : The following profiles are active: dev
+2020-06-11 09:56:46.134  INFO 8000 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-11 09:56:46.135  INFO 8000 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-11 09:56:50.635  INFO 8000 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-11 09:56:50.650  INFO 8000 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-11 09:56:50.651  INFO 8000 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-11 09:56:50.760  INFO 8000 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-11 09:56:50.760  INFO 8000 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4625 ms
+2020-06-11 09:56:52.403  INFO 8000 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-11 09:56:52.512  INFO 8000 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-11 09:56:53.544  INFO 8000 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-06-11 09:56:53.817  INFO 8000 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-11 09:56:53.829  INFO 8000 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Started BlogApplication in 9.118 seconds (JVM running for 13.293)
+2020-06-11 09:59:27.445  INFO 8000 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-11 09:59:27.445  INFO 8000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-11 09:59:27.457  INFO 8000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2020-06-11 09:59:35.067  INFO 8000 --- [http-nio-8080-exec-3] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-06-11 09:59:35.128 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.b.m.B.getFirstPageBlog_COUNT         : ==>  Preparing: SELECT count(0) FROM blog.t_blog b, blog.t_type t, blog.t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2020-06-11 09:59:35.291 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.b.m.B.getFirstPageBlog_COUNT         : ==> Parameters: 
+2020-06-11 09:59:35.347 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.b.m.B.getFirstPageBlog_COUNT         : <==      Total: 1
+2020-06-11 09:59:35.350 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.b.m.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from blog.t_blog b, blog.t_type t,blog.t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2020-06-11 09:59:35.355 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.b.m.BlogMapper.getFirstPageBlog      : ==> Parameters: 10(Integer)
+2020-06-11 09:59:35.363 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.b.m.BlogMapper.getFirstPageBlog      : <==      Total: 7
+2020-06-11 09:59:35.367 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select * from blog.t_blog where t_blog.recommend = true order by t_blog.update_time desc limit 4; 
+2020-06-11 09:59:35.368 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-06-11 09:59:35.372 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.b.m.BlogMapper.getAllRecommendBlog   : <==      Total: 4
+2020-06-11 09:59:35.375 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.blog.mapper.TagMapper.getAllTag      : ==>  Preparing: select * from t_tag 
+2020-06-11 09:59:35.376 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.blog.mapper.TagMapper.getAllTag      : ==> Parameters: 
+2020-06-11 09:59:35.380 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.blog.mapper.TagMapper.getAllTag      : <==      Total: 11
+2020-06-11 10:00:37.253  INFO 8000 --- [http-nio-8080-exec-10] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1574821219,1574821242,1574821265] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-06-11 10:00:37.264 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.b.m.B.getFirstPageBlog_COUNT         : ==>  Preparing: SELECT count(0) FROM blog.t_blog b, blog.t_type t, blog.t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2020-06-11 10:00:37.264 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.b.m.B.getFirstPageBlog_COUNT         : ==> Parameters: 
+2020-06-11 10:00:37.267 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.b.m.B.getFirstPageBlog_COUNT         : <==      Total: 1
+2020-06-11 10:00:37.268 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.b.m.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from blog.t_blog b, blog.t_type t,blog.t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2020-06-11 10:00:37.268 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.b.m.BlogMapper.getFirstPageBlog      : ==> Parameters: 10(Integer)
+2020-06-11 10:00:37.278 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.b.m.BlogMapper.getFirstPageBlog      : <==      Total: 7
+2020-06-11 10:00:37.279 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select * from blog.t_blog where t_blog.recommend = true order by t_blog.update_time desc limit 4; 
+2020-06-11 10:00:37.279 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-06-11 10:00:37.283 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.b.m.BlogMapper.getAllRecommendBlog   : <==      Total: 4
+2020-06-11 10:00:37.284 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.blog.mapper.TagMapper.getAllTag      : ==>  Preparing: select * from t_tag 
+2020-06-11 10:00:37.285 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.blog.mapper.TagMapper.getAllTag      : ==> Parameters: 
+2020-06-11 10:00:37.289 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.blog.mapper.TagMapper.getAllTag      : <==      Total: 11
+2020-06-11 10:00:59.230 DEBUG 8000 --- [http-nio-8080-exec-5] c.x.b.m.U.findByUsernameAndPassword      : ==>  Preparing: select * from t_user where username=? and password=? 
+2020-06-11 10:00:59.232 DEBUG 8000 --- [http-nio-8080-exec-5] c.x.b.m.U.findByUsernameAndPassword      : ==> Parameters: xinjiang(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-06-11 10:00:59.236 DEBUG 8000 --- [http-nio-8080-exec-5] c.x.b.m.U.findByUsernameAndPassword      : <==      Total: 1
+2020-06-11 10:01:00.489 DEBUG 8000 --- [http-nio-8080-exec-2] c.x.b.m.B.getAllBlogQuery_COUNT          : ==>  Preparing: SELECT count(0) FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id 
+2020-06-11 10:01:00.527 DEBUG 8000 --- [http-nio-8080-exec-2] c.x.b.m.B.getAllBlogQuery_COUNT          : ==> Parameters: 
+2020-06-11 10:01:00.529 DEBUG 8000 --- [http-nio-8080-exec-2] c.x.b.m.B.getAllBlogQuery_COUNT          : <==      Total: 1
+2020-06-11 10:01:00.540 DEBUG 8000 --- [http-nio-8080-exec-2] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id order by update_time desc LIMIT ? 
+2020-06-11 10:01:00.543 DEBUG 8000 --- [http-nio-8080-exec-2] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==> Parameters: 10(Integer)
+2020-06-11 10:01:00.547 DEBUG 8000 --- [http-nio-8080-exec-2] c.x.b.mapper.BlogMapper.getAllBlogQuery  : <==      Total: 7
+2020-06-11 10:01:00.550 DEBUG 8000 --- [http-nio-8080-exec-2] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-11 10:01:00.551 DEBUG 8000 --- [http-nio-8080-exec-2] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-11 10:01:00.554 DEBUG 8000 --- [http-nio-8080-exec-2] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 18
+2020-06-11 10:01:02.734 DEBUG 8000 --- [http-nio-8080-exec-7] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-11 10:01:02.735 DEBUG 8000 --- [http-nio-8080-exec-7] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-11 10:01:02.742 DEBUG 8000 --- [http-nio-8080-exec-7] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 18
+2020-06-11 10:01:29.007 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.blog.mapper.BlogMapper.saveBlog      : ==>  Preparing: insert into blog.t_blog (id,title, content, first_picture, flag, views, comment_count, appreciation, share_statement, commentabled, published, recommend, create_time, update_time, type_id, user_id, description) values (?,?,?,?,?,?,?,?, ?,?,?,?,?, ?,?,?,?); 
+2020-06-11 10:01:29.041 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.blog.mapper.BlogMapper.saveBlog      : ==> Parameters: null, 公主连结(String), 《公主连结！》是由日本Cygames开发的游戏，于2015年在Ameba与iOS平台推出，2016年7月29日结束服务。2016年在“Cygames NEXT 2016”上确定新作《公主连结！Re:Dive》。(String), ../Static/images/SD013FH.PNG(String), (String), 0(Integer), 0(Integer), true(Boolean), true(Boolean), true(Boolean), true(Boolean), true(Boolean), 2020-06-11 10:01:28.997(Timestamp), 2020-06-11 10:01:28.997(Timestamp), 6(Long), 1(Long), 《公主连结！》是由日本Cygames开发的游戏，于2015年在Ameba与iOS平台推出，2016年7月29日结束服务。2016年在“Cygames NEXT 2016”上确定新作《公主连结！Re:Dive》。(String)
+2020-06-11 10:01:29.044 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.blog.mapper.BlogMapper.saveBlog      : <==    Updates: 1
+2020-06-11 10:01:29.081 DEBUG 8000 --- [http-nio-8080-exec-6] c.x.b.m.B.getAllBlogQuery_COUNT          : ==>  Preparing: SELECT count(0) FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id 
+2020-06-11 10:01:29.081 DEBUG 8000 --- [http-nio-8080-exec-6] c.x.b.m.B.getAllBlogQuery_COUNT          : ==> Parameters: 
+2020-06-11 10:01:29.083 DEBUG 8000 --- [http-nio-8080-exec-6] c.x.b.m.B.getAllBlogQuery_COUNT          : <==      Total: 1
+2020-06-11 10:01:29.088 DEBUG 8000 --- [http-nio-8080-exec-6] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id order by update_time desc LIMIT ? 
+2020-06-11 10:01:29.088 DEBUG 8000 --- [http-nio-8080-exec-6] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==> Parameters: 10(Integer)
+2020-06-11 10:01:29.093 DEBUG 8000 --- [http-nio-8080-exec-6] c.x.b.mapper.BlogMapper.getAllBlogQuery  : <==      Total: 8
+2020-06-11 10:01:29.094 DEBUG 8000 --- [http-nio-8080-exec-6] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-11 10:01:29.094 DEBUG 8000 --- [http-nio-8080-exec-6] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-11 10:01:29.097 DEBUG 8000 --- [http-nio-8080-exec-6] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 18
+2020-06-11 10:01:37.434 DEBUG 8000 --- [http-nio-8080-exec-4] c.x.b.m.B.getFirstPageBlog_COUNT         : ==>  Preparing: SELECT count(0) FROM blog.t_blog b, blog.t_type t, blog.t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2020-06-11 10:01:37.434 DEBUG 8000 --- [http-nio-8080-exec-4] c.x.b.m.B.getFirstPageBlog_COUNT         : ==> Parameters: 
+2020-06-11 10:01:37.439 DEBUG 8000 --- [http-nio-8080-exec-4] c.x.b.m.B.getFirstPageBlog_COUNT         : <==      Total: 1
+2020-06-11 10:01:37.440 DEBUG 8000 --- [http-nio-8080-exec-4] c.x.b.m.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from blog.t_blog b, blog.t_type t,blog.t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2020-06-11 10:01:37.441 DEBUG 8000 --- [http-nio-8080-exec-4] c.x.b.m.BlogMapper.getFirstPageBlog      : ==> Parameters: 10(Integer)
+2020-06-11 10:01:37.449 DEBUG 8000 --- [http-nio-8080-exec-4] c.x.b.m.BlogMapper.getFirstPageBlog      : <==      Total: 8
+2020-06-11 10:01:37.450 DEBUG 8000 --- [http-nio-8080-exec-4] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select * from blog.t_blog where t_blog.recommend = true order by t_blog.update_time desc limit 4; 
+2020-06-11 10:01:37.450 DEBUG 8000 --- [http-nio-8080-exec-4] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-06-11 10:01:37.455 DEBUG 8000 --- [http-nio-8080-exec-4] c.x.b.m.BlogMapper.getAllRecommendBlog   : <==      Total: 4
+2020-06-11 10:01:37.457 DEBUG 8000 --- [http-nio-8080-exec-4] c.x.blog.mapper.TagMapper.getAllTag      : ==>  Preparing: select * from t_tag 
+2020-06-11 10:01:37.457 DEBUG 8000 --- [http-nio-8080-exec-4] c.x.blog.mapper.TagMapper.getAllTag      : ==> Parameters: 
+2020-06-11 10:01:37.459 DEBUG 8000 --- [http-nio-8080-exec-4] c.x.blog.mapper.TagMapper.getAllTag      : <==      Total: 11
+2020-06-11 10:03:45.223 DEBUG 8000 --- [http-nio-8080-exec-4] c.x.b.m.B.getFirstPageBlog_COUNT         : ==>  Preparing: SELECT count(0) FROM blog.t_blog b, blog.t_type t, blog.t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2020-06-11 10:03:45.225 DEBUG 8000 --- [http-nio-8080-exec-4] c.x.b.m.B.getFirstPageBlog_COUNT         : ==> Parameters: 
+2020-06-11 10:03:45.230 DEBUG 8000 --- [http-nio-8080-exec-4] c.x.b.m.B.getFirstPageBlog_COUNT         : <==      Total: 1
+2020-06-11 10:03:45.231 DEBUG 8000 --- [http-nio-8080-exec-4] c.x.b.m.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from blog.t_blog b, blog.t_type t,blog.t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2020-06-11 10:03:45.231 DEBUG 8000 --- [http-nio-8080-exec-4] c.x.b.m.BlogMapper.getFirstPageBlog      : ==> Parameters: 10(Integer)
+2020-06-11 10:03:45.237 DEBUG 8000 --- [http-nio-8080-exec-4] c.x.b.m.BlogMapper.getFirstPageBlog      : <==      Total: 8
+2020-06-11 10:03:45.239 DEBUG 8000 --- [http-nio-8080-exec-4] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select * from blog.t_blog where t_blog.recommend = true order by t_blog.update_time desc limit 4; 
+2020-06-11 10:03:45.239 DEBUG 8000 --- [http-nio-8080-exec-4] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-06-11 10:03:45.245 DEBUG 8000 --- [http-nio-8080-exec-4] c.x.b.m.BlogMapper.getAllRecommendBlog   : <==      Total: 4
+2020-06-11 10:03:45.246 DEBUG 8000 --- [http-nio-8080-exec-4] c.x.blog.mapper.TagMapper.getAllTag      : ==>  Preparing: select * from t_tag 
+2020-06-11 10:03:45.246 DEBUG 8000 --- [http-nio-8080-exec-4] c.x.blog.mapper.TagMapper.getAllTag      : ==> Parameters: 
+2020-06-11 10:03:45.248 DEBUG 8000 --- [http-nio-8080-exec-4] c.x.blog.mapper.TagMapper.getAllTag      : <==      Total: 11
+2020-06-11 10:04:19.385 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.b.m.B.getFirstPageBlog_COUNT         : ==>  Preparing: SELECT count(0) FROM blog.t_blog b, blog.t_type t, blog.t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2020-06-11 10:04:19.386 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.b.m.B.getFirstPageBlog_COUNT         : ==> Parameters: 
+2020-06-11 10:04:19.388 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.b.m.B.getFirstPageBlog_COUNT         : <==      Total: 1
+2020-06-11 10:04:19.392 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.b.m.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from blog.t_blog b, blog.t_type t,blog.t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2020-06-11 10:04:19.393 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.b.m.BlogMapper.getFirstPageBlog      : ==> Parameters: 10(Integer)
+2020-06-11 10:04:19.396 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.b.m.BlogMapper.getFirstPageBlog      : <==      Total: 8
+2020-06-11 10:04:19.399 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select * from blog.t_blog where t_blog.recommend = true order by t_blog.update_time desc limit 4; 
+2020-06-11 10:04:19.399 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-06-11 10:04:19.401 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.b.m.BlogMapper.getAllRecommendBlog   : <==      Total: 4
+2020-06-11 10:04:19.402 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.blog.mapper.TagMapper.getAllTag      : ==>  Preparing: select * from t_tag 
+2020-06-11 10:04:19.402 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.blog.mapper.TagMapper.getAllTag      : ==> Parameters: 
+2020-06-11 10:04:19.404 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.blog.mapper.TagMapper.getAllTag      : <==      Total: 11
+2020-06-11 10:05:20.124 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.b.m.B.getFirstPageBlog_COUNT         : ==>  Preparing: SELECT count(0) FROM blog.t_blog b, blog.t_type t, blog.t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2020-06-11 10:05:20.124 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.b.m.B.getFirstPageBlog_COUNT         : ==> Parameters: 
+2020-06-11 10:05:20.127 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.b.m.B.getFirstPageBlog_COUNT         : <==      Total: 1
+2020-06-11 10:05:20.127 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.b.m.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from blog.t_blog b, blog.t_type t,blog.t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2020-06-11 10:05:20.128 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.b.m.BlogMapper.getFirstPageBlog      : ==> Parameters: 10(Integer)
+2020-06-11 10:05:20.130 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.b.m.BlogMapper.getFirstPageBlog      : <==      Total: 8
+2020-06-11 10:05:20.131 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select * from blog.t_blog where t_blog.recommend = true order by t_blog.update_time desc limit 4; 
+2020-06-11 10:05:20.131 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-06-11 10:05:20.135 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.b.m.BlogMapper.getAllRecommendBlog   : <==      Total: 4
+2020-06-11 10:05:20.137 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.blog.mapper.TagMapper.getAllTag      : ==>  Preparing: select * from t_tag 
+2020-06-11 10:05:20.137 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.blog.mapper.TagMapper.getAllTag      : ==> Parameters: 
+2020-06-11 10:05:20.138 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.blog.mapper.TagMapper.getAllTag      : <==      Total: 11
+2020-06-11 10:05:45.418 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.b.m.B.getFirstPageBlog_COUNT         : ==>  Preparing: SELECT count(0) FROM blog.t_blog b, blog.t_type t, blog.t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2020-06-11 10:05:45.419 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.b.m.B.getFirstPageBlog_COUNT         : ==> Parameters: 
+2020-06-11 10:05:45.420 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.b.m.B.getFirstPageBlog_COUNT         : <==      Total: 1
+2020-06-11 10:05:45.420 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.b.m.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from blog.t_blog b, blog.t_type t,blog.t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2020-06-11 10:05:45.420 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.b.m.BlogMapper.getFirstPageBlog      : ==> Parameters: 10(Integer)
+2020-06-11 10:05:45.424 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.b.m.BlogMapper.getFirstPageBlog      : <==      Total: 8
+2020-06-11 10:05:45.427 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select * from blog.t_blog where t_blog.recommend = true order by t_blog.update_time desc limit 4; 
+2020-06-11 10:05:45.427 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-06-11 10:05:45.428 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.b.m.BlogMapper.getAllRecommendBlog   : <==      Total: 4
+2020-06-11 10:05:45.429 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.blog.mapper.TagMapper.getAllTag      : ==>  Preparing: select * from t_tag 
+2020-06-11 10:05:45.429 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.blog.mapper.TagMapper.getAllTag      : ==> Parameters: 
+2020-06-11 10:05:45.430 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.blog.mapper.TagMapper.getAllTag      : <==      Total: 11
+2020-06-11 10:07:44.227 DEBUG 8000 --- [http-nio-8080-exec-5] c.x.b.m.B.getFirstPageBlog_COUNT         : ==>  Preparing: SELECT count(0) FROM blog.t_blog b, blog.t_type t, blog.t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2020-06-11 10:07:44.227 DEBUG 8000 --- [http-nio-8080-exec-5] c.x.b.m.B.getFirstPageBlog_COUNT         : ==> Parameters: 
+2020-06-11 10:07:44.228 DEBUG 8000 --- [http-nio-8080-exec-5] c.x.b.m.B.getFirstPageBlog_COUNT         : <==      Total: 1
+2020-06-11 10:07:44.229 DEBUG 8000 --- [http-nio-8080-exec-5] c.x.b.m.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from blog.t_blog b, blog.t_type t,blog.t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2020-06-11 10:07:44.229 DEBUG 8000 --- [http-nio-8080-exec-5] c.x.b.m.BlogMapper.getFirstPageBlog      : ==> Parameters: 10(Integer)
+2020-06-11 10:07:44.233 DEBUG 8000 --- [http-nio-8080-exec-5] c.x.b.m.BlogMapper.getFirstPageBlog      : <==      Total: 8
+2020-06-11 10:07:44.234 DEBUG 8000 --- [http-nio-8080-exec-5] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select * from blog.t_blog where t_blog.recommend = true order by t_blog.update_time desc limit 4; 
+2020-06-11 10:07:44.234 DEBUG 8000 --- [http-nio-8080-exec-5] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-06-11 10:07:44.235 DEBUG 8000 --- [http-nio-8080-exec-5] c.x.b.m.BlogMapper.getAllRecommendBlog   : <==      Total: 4
+2020-06-11 10:07:44.236 DEBUG 8000 --- [http-nio-8080-exec-5] c.x.blog.mapper.TagMapper.getAllTag      : ==>  Preparing: select * from t_tag 
+2020-06-11 10:07:44.236 DEBUG 8000 --- [http-nio-8080-exec-5] c.x.blog.mapper.TagMapper.getAllTag      : ==> Parameters: 
+2020-06-11 10:07:44.238 DEBUG 8000 --- [http-nio-8080-exec-5] c.x.blog.mapper.TagMapper.getAllTag      : <==      Total: 11
+2020-06-11 10:10:42.253 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.b.m.B.getFirstPageBlog_COUNT         : ==>  Preparing: SELECT count(0) FROM blog.t_blog b, blog.t_type t, blog.t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2020-06-11 10:10:42.253 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.b.m.B.getFirstPageBlog_COUNT         : ==> Parameters: 
+2020-06-11 10:10:42.255 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.b.m.B.getFirstPageBlog_COUNT         : <==      Total: 1
+2020-06-11 10:10:42.255 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.b.m.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from blog.t_blog b, blog.t_type t,blog.t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2020-06-11 10:10:42.255 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.b.m.BlogMapper.getFirstPageBlog      : ==> Parameters: 10(Integer)
+2020-06-11 10:10:42.260 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.b.m.BlogMapper.getFirstPageBlog      : <==      Total: 8
+2020-06-11 10:10:42.261 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select * from blog.t_blog where t_blog.recommend = true order by t_blog.update_time desc limit 4; 
+2020-06-11 10:10:42.261 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-06-11 10:10:42.263 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.b.m.BlogMapper.getAllRecommendBlog   : <==      Total: 4
+2020-06-11 10:10:42.264 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.blog.mapper.TagMapper.getAllTag      : ==>  Preparing: select * from t_tag 
+2020-06-11 10:10:42.264 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.blog.mapper.TagMapper.getAllTag      : ==> Parameters: 
+2020-06-11 10:10:42.266 DEBUG 8000 --- [http-nio-8080-exec-3] c.x.blog.mapper.TagMapper.getAllTag      : <==      Total: 11
+2020-06-11 10:10:42.347 ERROR 8000 --- [http-nio-8080-exec-3] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-3] Exception processing template "index": An error happened during template parsing (template: "class path resource [templates/index.html]")
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/index.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.attoparser.ParseException: Exception evaluating SpringEL expression: "pageInfo.totalElements" (template: "index" - line 48, col 90)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 51 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "pageInfo.totalElements" (template: "index" - line 48, col 90)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:290)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 53 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'totalElements' cannot be found on object of type 'com.github.pagehelper.PageInfo' - maybe not public or not valid?
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:217)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	... 72 common frames omitted
+
+2020-06-11 10:10:42.354 ERROR 8000 --- [http-nio-8080-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/index.html]")] with root cause
+
+org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'totalElements' cannot be found on object of type 'com.github.pagehelper.PageInfo' - maybe not public or not valid?
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:217)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+2020-06-11 10:10:45.685  INFO 8000 --- [Thread-197] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-11 10:10:45.692  INFO 8000 --- [Thread-197] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-06-11 10:10:45.930  INFO 8000 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Starting BlogApplication on LAPTOP-8G1SU5VT with PID 8000 (F:\testprojects\xinjiang\target\classes started by 陈智彬 in F:\testprojects\xinjiang)
+2020-06-11 10:10:45.930 DEBUG 8000 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-06-11 10:10:45.930  INFO 8000 --- [restartedMain] com.xinjiang.blog.BlogApplication        : The following profiles are active: dev
+2020-06-11 10:10:46.451  INFO 8000 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-11 10:10:46.452  INFO 8000 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-11 10:10:46.452  INFO 8000 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-11 10:10:46.505  INFO 8000 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-11 10:10:46.505  INFO 8000 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 572 ms
+2020-06-11 10:10:46.991  INFO 8000 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-11 10:10:47.109  INFO 8000 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-11 10:10:47.607  INFO 8000 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-06-11 10:10:47.638  INFO 8000 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-11 10:10:47.669  INFO 8000 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Started BlogApplication in 1.784 seconds (JVM running for 847.133)
+2020-06-11 10:10:47.671  INFO 8000 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-06-11 10:11:17.571  INFO 8000 --- [http-nio-8080-exec-10] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-11 10:11:17.575  INFO 8000 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-11 10:11:17.598  INFO 8000 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed initialization in 23 ms
+2020-06-11 10:11:17.669  INFO 8000 --- [http-nio-8080-exec-10] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} inited
+2020-06-11 10:11:17.672 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.b.m.B.getFirstPageBlog_COUNT         : ==>  Preparing: SELECT count(0) FROM blog.t_blog b, blog.t_type t, blog.t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2020-06-11 10:11:17.673 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.b.m.B.getFirstPageBlog_COUNT         : ==> Parameters: 
+2020-06-11 10:11:17.675 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.b.m.B.getFirstPageBlog_COUNT         : <==      Total: 1
+2020-06-11 10:11:17.675 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.b.m.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from blog.t_blog b, blog.t_type t,blog.t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2020-06-11 10:11:17.677 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.b.m.BlogMapper.getFirstPageBlog      : ==> Parameters: 10(Integer)
+2020-06-11 10:11:17.679 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.b.m.BlogMapper.getFirstPageBlog      : <==      Total: 8
+2020-06-11 10:11:17.680 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select * from blog.t_blog where t_blog.recommend = true order by t_blog.update_time desc limit 4; 
+2020-06-11 10:11:17.681 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-06-11 10:11:17.682 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.b.m.BlogMapper.getAllRecommendBlog   : <==      Total: 4
+2020-06-11 10:11:17.685 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.blog.mapper.TagMapper.getAllTag      : ==>  Preparing: select * from t_tag 
+2020-06-11 10:11:17.686 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.blog.mapper.TagMapper.getAllTag      : ==> Parameters: 
+2020-06-11 10:11:17.688 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.blog.mapper.TagMapper.getAllTag      : <==      Total: 11
+2020-06-11 10:11:19.592  INFO 8000 --- [Thread-204] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-11 10:11:19.595  INFO 8000 --- [Thread-204] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} closed
+2020-06-11 10:11:19.798  INFO 8000 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Starting BlogApplication on LAPTOP-8G1SU5VT with PID 8000 (F:\testprojects\xinjiang\target\classes started by 陈智彬 in F:\testprojects\xinjiang)
+2020-06-11 10:11:19.798 DEBUG 8000 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-06-11 10:11:19.798  INFO 8000 --- [restartedMain] com.xinjiang.blog.BlogApplication        : The following profiles are active: dev
+2020-06-11 10:11:20.480  INFO 8000 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-11 10:11:20.481  INFO 8000 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-11 10:11:20.481  INFO 8000 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-11 10:11:20.554  INFO 8000 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-11 10:11:20.554  INFO 8000 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 753 ms
+2020-06-11 10:11:21.232  INFO 8000 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-11 10:11:21.308  INFO 8000 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-11 10:11:21.555  INFO 8000 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-06-11 10:11:21.585  INFO 8000 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-11 10:11:21.589  INFO 8000 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Started BlogApplication in 1.835 seconds (JVM running for 881.053)
+2020-06-11 10:11:21.593  INFO 8000 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-06-11 10:11:33.900  INFO 8000 --- [http-nio-8080-exec-10] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-11 10:11:33.901  INFO 8000 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-11 10:11:33.915  INFO 8000 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2020-06-11 10:11:33.963  INFO 8000 --- [http-nio-8080-exec-10] com.alibaba.druid.pool.DruidDataSource   : {dataSource-3} inited
+2020-06-11 10:11:33.966 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.b.m.B.getFirstPageBlog_COUNT         : ==>  Preparing: SELECT count(0) FROM blog.t_blog b, blog.t_type t, blog.t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2020-06-11 10:11:33.967 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.b.m.B.getFirstPageBlog_COUNT         : ==> Parameters: 
+2020-06-11 10:11:33.968 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.b.m.B.getFirstPageBlog_COUNT         : <==      Total: 1
+2020-06-11 10:11:33.970 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.b.m.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from blog.t_blog b, blog.t_type t,blog.t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2020-06-11 10:11:33.972 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.b.m.BlogMapper.getFirstPageBlog      : ==> Parameters: 10(Integer)
+2020-06-11 10:11:33.974 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.b.m.BlogMapper.getFirstPageBlog      : <==      Total: 8
+2020-06-11 10:11:33.975 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select * from blog.t_blog where t_blog.recommend = true order by t_blog.update_time desc limit 4; 
+2020-06-11 10:11:33.976 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-06-11 10:11:33.978 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.b.m.BlogMapper.getAllRecommendBlog   : <==      Total: 4
+2020-06-11 10:11:33.981 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.blog.mapper.TagMapper.getAllTag      : ==>  Preparing: select * from t_tag 
+2020-06-11 10:11:34.001 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.blog.mapper.TagMapper.getAllTag      : ==> Parameters: 
+2020-06-11 10:11:34.003 DEBUG 8000 --- [http-nio-8080-exec-10] c.x.blog.mapper.TagMapper.getAllTag      : <==      Total: 11
+2020-06-11 10:12:54.109 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.b.m.B.getFirstPageBlog_COUNT         : ==>  Preparing: SELECT count(0) FROM blog.t_blog b, blog.t_type t, blog.t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2020-06-11 10:12:54.110 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.b.m.B.getFirstPageBlog_COUNT         : ==> Parameters: 
+2020-06-11 10:12:54.111 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.b.m.B.getFirstPageBlog_COUNT         : <==      Total: 1
+2020-06-11 10:12:54.111 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.b.m.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from blog.t_blog b, blog.t_type t,blog.t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2020-06-11 10:12:54.112 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.b.m.BlogMapper.getFirstPageBlog      : ==> Parameters: 10(Integer)
+2020-06-11 10:12:54.116 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.b.m.BlogMapper.getFirstPageBlog      : <==      Total: 8
+2020-06-11 10:12:54.117 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select * from blog.t_blog where t_blog.recommend = true order by t_blog.update_time desc limit 4; 
+2020-06-11 10:12:54.117 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-06-11 10:12:54.119 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.b.m.BlogMapper.getAllRecommendBlog   : <==      Total: 4
+2020-06-11 10:12:54.121 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.blog.mapper.TagMapper.getAllTag      : ==>  Preparing: select * from t_tag 
+2020-06-11 10:12:54.121 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.blog.mapper.TagMapper.getAllTag      : ==> Parameters: 
+2020-06-11 10:12:54.123 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.blog.mapper.TagMapper.getAllTag      : <==      Total: 11
+2020-06-11 10:12:54.147 ERROR 8000 --- [http-nio-8080-exec-1] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-1] Exception processing template "index": An error happened during template parsing (template: "class path resource [templates/index.html]")
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/index.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.attoparser.ParseException: Exception evaluating SpringEL expression: "pageInfo.list.size" (template: "index" - line 48, col 90)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 51 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "pageInfo.list.size" (template: "index" - line 48, col 90)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:290)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 53 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'size' cannot be found on object of type 'com.github.pagehelper.Page' - maybe not public or not valid?
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:217)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	... 72 common frames omitted
+
+2020-06-11 10:12:54.148 ERROR 8000 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/index.html]")] with root cause
+
+org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'size' cannot be found on object of type 'com.github.pagehelper.Page' - maybe not public or not valid?
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:217)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+2020-06-11 10:13:01.072 DEBUG 8000 --- [http-nio-8080-exec-8] c.x.b.m.B.getFirstPageBlog_COUNT         : ==>  Preparing: SELECT count(0) FROM blog.t_blog b, blog.t_type t, blog.t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2020-06-11 10:13:01.072 DEBUG 8000 --- [http-nio-8080-exec-8] c.x.b.m.B.getFirstPageBlog_COUNT         : ==> Parameters: 
+2020-06-11 10:13:01.073 DEBUG 8000 --- [http-nio-8080-exec-8] c.x.b.m.B.getFirstPageBlog_COUNT         : <==      Total: 1
+2020-06-11 10:13:01.074 DEBUG 8000 --- [http-nio-8080-exec-8] c.x.b.m.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from blog.t_blog b, blog.t_type t,blog.t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2020-06-11 10:13:01.074 DEBUG 8000 --- [http-nio-8080-exec-8] c.x.b.m.BlogMapper.getFirstPageBlog      : ==> Parameters: 10(Integer)
+2020-06-11 10:13:01.076 DEBUG 8000 --- [http-nio-8080-exec-8] c.x.b.m.BlogMapper.getFirstPageBlog      : <==      Total: 8
+2020-06-11 10:13:01.076 DEBUG 8000 --- [http-nio-8080-exec-8] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select * from blog.t_blog where t_blog.recommend = true order by t_blog.update_time desc limit 4; 
+2020-06-11 10:13:01.076 DEBUG 8000 --- [http-nio-8080-exec-8] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-06-11 10:13:01.080 DEBUG 8000 --- [http-nio-8080-exec-8] c.x.b.m.BlogMapper.getAllRecommendBlog   : <==      Total: 4
+2020-06-11 10:13:01.080 DEBUG 8000 --- [http-nio-8080-exec-8] c.x.blog.mapper.TagMapper.getAllTag      : ==>  Preparing: select * from t_tag 
+2020-06-11 10:13:01.080 DEBUG 8000 --- [http-nio-8080-exec-8] c.x.blog.mapper.TagMapper.getAllTag      : ==> Parameters: 
+2020-06-11 10:13:01.081 DEBUG 8000 --- [http-nio-8080-exec-8] c.x.blog.mapper.TagMapper.getAllTag      : <==      Total: 11
+2020-06-11 10:13:01.087 ERROR 8000 --- [http-nio-8080-exec-8] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-8] Exception processing template "index": An error happened during template parsing (template: "class path resource [templates/index.html]")
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/index.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.attoparser.ParseException: Exception evaluating SpringEL expression: "pageInfo.list.size" (template: "index" - line 48, col 90)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 51 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "pageInfo.list.size" (template: "index" - line 48, col 90)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:290)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 53 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'size' cannot be found on object of type 'com.github.pagehelper.Page' - maybe not public or not valid?
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:217)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	... 72 common frames omitted
+
+2020-06-11 10:13:01.088 ERROR 8000 --- [http-nio-8080-exec-8] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/index.html]")] with root cause
+
+org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'size' cannot be found on object of type 'com.github.pagehelper.Page' - maybe not public or not valid?
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:217)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+2020-06-11 10:13:09.922 DEBUG 8000 --- [http-nio-8080-exec-7] c.x.b.m.B.getFirstPageBlog_COUNT         : ==>  Preparing: SELECT count(0) FROM blog.t_blog b, blog.t_type t, blog.t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2020-06-11 10:13:09.922 DEBUG 8000 --- [http-nio-8080-exec-7] c.x.b.m.B.getFirstPageBlog_COUNT         : ==> Parameters: 
+2020-06-11 10:13:09.922 DEBUG 8000 --- [http-nio-8080-exec-7] c.x.b.m.B.getFirstPageBlog_COUNT         : <==      Total: 1
+2020-06-11 10:13:09.923 DEBUG 8000 --- [http-nio-8080-exec-7] c.x.b.m.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from blog.t_blog b, blog.t_type t,blog.t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2020-06-11 10:13:09.923 DEBUG 8000 --- [http-nio-8080-exec-7] c.x.b.m.BlogMapper.getFirstPageBlog      : ==> Parameters: 10(Integer)
+2020-06-11 10:13:09.925 DEBUG 8000 --- [http-nio-8080-exec-7] c.x.b.m.BlogMapper.getFirstPageBlog      : <==      Total: 8
+2020-06-11 10:13:09.926 DEBUG 8000 --- [http-nio-8080-exec-7] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select * from blog.t_blog where t_blog.recommend = true order by t_blog.update_time desc limit 4; 
+2020-06-11 10:13:09.927 DEBUG 8000 --- [http-nio-8080-exec-7] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-06-11 10:13:09.935 DEBUG 8000 --- [http-nio-8080-exec-7] c.x.b.m.BlogMapper.getAllRecommendBlog   : <==      Total: 4
+2020-06-11 10:13:09.935 DEBUG 8000 --- [http-nio-8080-exec-7] c.x.blog.mapper.TagMapper.getAllTag      : ==>  Preparing: select * from t_tag 
+2020-06-11 10:13:09.936 DEBUG 8000 --- [http-nio-8080-exec-7] c.x.blog.mapper.TagMapper.getAllTag      : ==> Parameters: 
+2020-06-11 10:13:09.937 DEBUG 8000 --- [http-nio-8080-exec-7] c.x.blog.mapper.TagMapper.getAllTag      : <==      Total: 11
+2020-06-11 10:13:09.968 ERROR 8000 --- [http-nio-8080-exec-7] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-7] Exception processing template "index": An error happened during template parsing (template: "class path resource [templates/index.html]")
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/index.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.attoparser.ParseException: Exception evaluating SpringEL expression: "pageInfo.list.size" (template: "index" - line 48, col 90)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 51 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "pageInfo.list.size" (template: "index" - line 48, col 90)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:290)
+	at org.thymeleaf.standard.expression.SelectionVariableExpression.executeSelectionVariableExpression(SelectionVariableExpression.java:158)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:92)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 53 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'size' cannot be found on object of type 'com.github.pagehelper.Page' - maybe not public or not valid?
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:217)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	... 72 common frames omitted
+
+2020-06-11 10:13:09.999 ERROR 8000 --- [http-nio-8080-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/index.html]")] with root cause
+
+org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'size' cannot be found on object of type 'com.github.pagehelper.Page' - maybe not public or not valid?
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:217)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	at org.thymeleaf.standard.expression.SelectionVariableExpression.executeSelectionVariableExpression(SelectionVariableExpression.java:158)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:92)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+2020-06-11 10:13:11.728 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.b.m.B.getFirstPageBlog_COUNT         : ==>  Preparing: SELECT count(0) FROM blog.t_blog b, blog.t_type t, blog.t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2020-06-11 10:13:11.729 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.b.m.B.getFirstPageBlog_COUNT         : ==> Parameters: 
+2020-06-11 10:13:11.729 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.b.m.B.getFirstPageBlog_COUNT         : <==      Total: 1
+2020-06-11 10:13:11.730 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.b.m.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from blog.t_blog b, blog.t_type t,blog.t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2020-06-11 10:13:11.730 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.b.m.BlogMapper.getFirstPageBlog      : ==> Parameters: 10(Integer)
+2020-06-11 10:13:11.732 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.b.m.BlogMapper.getFirstPageBlog      : <==      Total: 8
+2020-06-11 10:13:11.733 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select * from blog.t_blog where t_blog.recommend = true order by t_blog.update_time desc limit 4; 
+2020-06-11 10:13:11.734 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-06-11 10:13:11.736 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.b.m.BlogMapper.getAllRecommendBlog   : <==      Total: 4
+2020-06-11 10:13:11.737 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.blog.mapper.TagMapper.getAllTag      : ==>  Preparing: select * from t_tag 
+2020-06-11 10:13:11.737 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.blog.mapper.TagMapper.getAllTag      : ==> Parameters: 
+2020-06-11 10:13:11.738 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.blog.mapper.TagMapper.getAllTag      : <==      Total: 11
+2020-06-11 10:13:11.744 ERROR 8000 --- [http-nio-8080-exec-9] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-9] Exception processing template "index": An error happened during template parsing (template: "class path resource [templates/index.html]")
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/index.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.attoparser.ParseException: Exception evaluating SpringEL expression: "pageInfo.list.size" (template: "index" - line 48, col 90)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 51 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "pageInfo.list.size" (template: "index" - line 48, col 90)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:290)
+	at org.thymeleaf.standard.expression.SelectionVariableExpression.executeSelectionVariableExpression(SelectionVariableExpression.java:158)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:92)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 53 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'size' cannot be found on object of type 'com.github.pagehelper.Page' - maybe not public or not valid?
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:217)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	... 72 common frames omitted
+
+2020-06-11 10:13:11.745 ERROR 8000 --- [http-nio-8080-exec-9] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/index.html]")] with root cause
+
+org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property or field 'size' cannot be found on object of type 'com.github.pagehelper.Page' - maybe not public or not valid?
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:217)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	at org.thymeleaf.standard.expression.SelectionVariableExpression.executeSelectionVariableExpression(SelectionVariableExpression.java:158)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:92)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+2020-06-11 10:13:23.816 DEBUG 8000 --- [http-nio-8080-exec-6] c.x.b.m.B.getFirstPageBlog_COUNT         : ==>  Preparing: SELECT count(0) FROM blog.t_blog b, blog.t_type t, blog.t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2020-06-11 10:13:23.816 DEBUG 8000 --- [http-nio-8080-exec-6] c.x.b.m.B.getFirstPageBlog_COUNT         : ==> Parameters: 
+2020-06-11 10:13:23.817 DEBUG 8000 --- [http-nio-8080-exec-6] c.x.b.m.B.getFirstPageBlog_COUNT         : <==      Total: 1
+2020-06-11 10:13:23.818 DEBUG 8000 --- [http-nio-8080-exec-6] c.x.b.m.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from blog.t_blog b, blog.t_type t,blog.t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2020-06-11 10:13:23.818 DEBUG 8000 --- [http-nio-8080-exec-6] c.x.b.m.BlogMapper.getFirstPageBlog      : ==> Parameters: 10(Integer)
+2020-06-11 10:13:23.820 DEBUG 8000 --- [http-nio-8080-exec-6] c.x.b.m.BlogMapper.getFirstPageBlog      : <==      Total: 8
+2020-06-11 10:13:23.822 DEBUG 8000 --- [http-nio-8080-exec-6] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select * from blog.t_blog where t_blog.recommend = true order by t_blog.update_time desc limit 4; 
+2020-06-11 10:13:23.822 DEBUG 8000 --- [http-nio-8080-exec-6] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-06-11 10:13:23.823 DEBUG 8000 --- [http-nio-8080-exec-6] c.x.b.m.BlogMapper.getAllRecommendBlog   : <==      Total: 4
+2020-06-11 10:13:23.824 DEBUG 8000 --- [http-nio-8080-exec-6] c.x.blog.mapper.TagMapper.getAllTag      : ==>  Preparing: select * from t_tag 
+2020-06-11 10:13:23.824 DEBUG 8000 --- [http-nio-8080-exec-6] c.x.blog.mapper.TagMapper.getAllTag      : ==> Parameters: 
+2020-06-11 10:13:23.825 DEBUG 8000 --- [http-nio-8080-exec-6] c.x.blog.mapper.TagMapper.getAllTag      : <==      Total: 11
+2020-06-11 10:14:54.868 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.b.m.B.getFirstPageBlog_COUNT         : ==>  Preparing: SELECT count(0) FROM blog.t_blog b, blog.t_type t, blog.t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2020-06-11 10:14:54.868 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.b.m.B.getFirstPageBlog_COUNT         : ==> Parameters: 
+2020-06-11 10:14:54.869 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.b.m.B.getFirstPageBlog_COUNT         : <==      Total: 1
+2020-06-11 10:14:54.870 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.b.m.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from blog.t_blog b, blog.t_type t,blog.t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2020-06-11 10:14:54.870 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.b.m.BlogMapper.getFirstPageBlog      : ==> Parameters: 10(Integer)
+2020-06-11 10:14:54.871 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.b.m.BlogMapper.getFirstPageBlog      : <==      Total: 8
+2020-06-11 10:14:54.872 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select * from blog.t_blog where t_blog.recommend = true order by t_blog.update_time desc limit 4; 
+2020-06-11 10:14:54.872 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-06-11 10:14:54.875 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.b.m.BlogMapper.getAllRecommendBlog   : <==      Total: 4
+2020-06-11 10:14:54.876 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.blog.mapper.TagMapper.getAllTag      : ==>  Preparing: select * from t_tag 
+2020-06-11 10:14:54.876 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.blog.mapper.TagMapper.getAllTag      : ==> Parameters: 
+2020-06-11 10:14:54.877 DEBUG 8000 --- [http-nio-8080-exec-9] c.x.blog.mapper.TagMapper.getAllTag      : <==      Total: 11
+2020-06-11 10:14:59.024  INFO 8000 --- [Thread-382] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-11 10:14:59.027  INFO 8000 --- [Thread-382] com.alibaba.druid.pool.DruidDataSource   : {dataSource-3} closed
+2020-06-11 10:14:59.313  INFO 8000 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Starting BlogApplication on LAPTOP-8G1SU5VT with PID 8000 (F:\testprojects\xinjiang\target\classes started by 陈智彬 in F:\testprojects\xinjiang)
+2020-06-11 10:14:59.313 DEBUG 8000 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-06-11 10:14:59.313  INFO 8000 --- [restartedMain] com.xinjiang.blog.BlogApplication        : The following profiles are active: dev
+2020-06-11 10:14:59.903  INFO 8000 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-11 10:14:59.903  INFO 8000 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-11 10:14:59.904  INFO 8000 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-11 10:14:59.929  INFO 8000 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-11 10:14:59.929  INFO 8000 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 610 ms
+2020-06-11 10:15:00.343  INFO 8000 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-11 10:15:00.381  INFO 8000 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-11 10:15:00.590  INFO 8000 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-06-11 10:15:00.601  INFO 8000 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-11 10:15:00.605  INFO 8000 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Started BlogApplication in 1.346 seconds (JVM running for 1100.068)
+2020-06-11 10:15:00.606  INFO 8000 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-06-11 10:15:07.923  INFO 8000 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-11 10:15:07.928  INFO 8000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-11 10:15:07.940  INFO 8000 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2020-06-11 10:15:07.969  INFO 8000 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-4} inited
+2020-06-11 10:15:07.971 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.b.m.B.getFirstPageBlog_COUNT         : ==>  Preparing: SELECT count(0) FROM blog.t_blog b, blog.t_type t, blog.t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2020-06-11 10:15:07.972 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.b.m.B.getFirstPageBlog_COUNT         : ==> Parameters: 
+2020-06-11 10:15:07.973 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.b.m.B.getFirstPageBlog_COUNT         : <==      Total: 1
+2020-06-11 10:15:07.973 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.b.m.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from blog.t_blog b, blog.t_type t,blog.t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2020-06-11 10:15:07.974 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.b.m.BlogMapper.getFirstPageBlog      : ==> Parameters: 10(Integer)
+2020-06-11 10:15:07.977 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.b.m.BlogMapper.getFirstPageBlog      : <==      Total: 8
+2020-06-11 10:15:07.977 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select * from blog.t_blog where t_blog.recommend = true order by t_blog.update_time desc limit 4; 
+2020-06-11 10:15:07.978 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-06-11 10:15:07.980 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.b.m.BlogMapper.getAllRecommendBlog   : <==      Total: 4
+2020-06-11 10:15:07.982 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.blog.mapper.TagMapper.getAllTag      : ==>  Preparing: select * from t_tag 
+2020-06-11 10:15:07.982 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.blog.mapper.TagMapper.getAllTag      : ==> Parameters: 
+2020-06-11 10:15:07.984 DEBUG 8000 --- [http-nio-8080-exec-1] c.x.blog.mapper.TagMapper.getAllTag      : <==      Total: 11
+2020-06-11 10:15:28.734 DEBUG 8000 --- [http-nio-8080-exec-5] c.x.b.m.B.getFirstPageBlog_COUNT         : ==>  Preparing: SELECT count(0) FROM blog.t_blog b, blog.t_type t, blog.t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2020-06-11 10:15:28.734 DEBUG 8000 --- [http-nio-8080-exec-5] c.x.b.m.B.getFirstPageBlog_COUNT         : ==> Parameters: 
+2020-06-11 10:15:28.736 DEBUG 8000 --- [http-nio-8080-exec-5] c.x.b.m.B.getFirstPageBlog_COUNT         : <==      Total: 1
+2020-06-11 10:15:28.736 DEBUG 8000 --- [http-nio-8080-exec-5] c.x.b.m.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from blog.t_blog b, blog.t_type t,blog.t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2020-06-11 10:15:28.741 DEBUG 8000 --- [http-nio-8080-exec-5] c.x.b.m.BlogMapper.getFirstPageBlog      : ==> Parameters: 10(Integer)
+2020-06-11 10:15:28.749 DEBUG 8000 --- [http-nio-8080-exec-5] c.x.b.m.BlogMapper.getFirstPageBlog      : <==      Total: 8
+2020-06-11 10:15:28.750 DEBUG 8000 --- [http-nio-8080-exec-5] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select * from blog.t_blog where t_blog.recommend = true order by t_blog.update_time desc limit 4; 
+2020-06-11 10:15:28.750 DEBUG 8000 --- [http-nio-8080-exec-5] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-06-11 10:15:28.751 DEBUG 8000 --- [http-nio-8080-exec-5] c.x.b.m.BlogMapper.getAllRecommendBlog   : <==      Total: 4
+2020-06-11 10:15:28.752 DEBUG 8000 --- [http-nio-8080-exec-5] c.x.blog.mapper.TagMapper.getAllTag      : ==>  Preparing: select * from t_tag 
+2020-06-11 10:15:28.753 DEBUG 8000 --- [http-nio-8080-exec-5] c.x.blog.mapper.TagMapper.getAllTag      : ==> Parameters: 
+2020-06-11 10:15:28.757 DEBUG 8000 --- [http-nio-8080-exec-5] c.x.blog.mapper.TagMapper.getAllTag      : <==      Total: 11
+2020-06-11 10:15:36.978  INFO 5624 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Starting BlogApplication on LAPTOP-8G1SU5VT with PID 5624 (F:\testprojects\xinjiang\target\classes started by 陈智彬 in F:\testprojects\xinjiang)
+2020-06-11 10:15:36.982 DEBUG 5624 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-06-11 10:15:36.982  INFO 5624 --- [restartedMain] com.xinjiang.blog.BlogApplication        : The following profiles are active: dev
+2020-06-11 10:15:37.025  INFO 5624 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-11 10:15:37.025  INFO 5624 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-11 10:15:39.091  INFO 5624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-11 10:15:39.100  INFO 5624 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-11 10:15:39.100  INFO 5624 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-11 10:15:39.195  INFO 5624 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-11 10:15:39.196  INFO 5624 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2170 ms
+2020-06-11 10:15:40.139  INFO 5624 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-11 10:15:40.247  INFO 5624 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-11 10:15:40.796  INFO 5624 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-06-11 10:15:40.838  INFO 5624 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-11 10:15:40.854  INFO 5624 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Started BlogApplication in 4.64 seconds (JVM running for 6.006)
+2020-06-11 10:15:43.444  INFO 5624 --- [http-nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1574821219,1574821242,1574821265; JSESSIONID=C1A6DFAC4CE5EBBC0E41FA75BCE8A1C4] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-06-11 10:15:43.452  INFO 5624 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-11 10:15:43.452  INFO 5624 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-11 10:15:43.464  INFO 5624 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2020-06-11 10:15:43.685  INFO 5624 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-06-11 10:15:43.729 DEBUG 5624 --- [http-nio-8080-exec-1] c.x.b.m.B.getFirstPageBlog_COUNT         : ==>  Preparing: SELECT count(0) FROM blog.t_blog b, blog.t_type t, blog.t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2020-06-11 10:15:43.858 DEBUG 5624 --- [http-nio-8080-exec-1] c.x.b.m.B.getFirstPageBlog_COUNT         : ==> Parameters: 
+2020-06-11 10:15:43.884 DEBUG 5624 --- [http-nio-8080-exec-1] c.x.b.m.B.getFirstPageBlog_COUNT         : <==      Total: 1
+2020-06-11 10:15:43.888 DEBUG 5624 --- [http-nio-8080-exec-1] c.x.b.m.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from blog.t_blog b, blog.t_type t,blog.t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2020-06-11 10:15:43.892 DEBUG 5624 --- [http-nio-8080-exec-1] c.x.b.m.BlogMapper.getFirstPageBlog      : ==> Parameters: 10(Integer)
+2020-06-11 10:15:43.901 DEBUG 5624 --- [http-nio-8080-exec-1] c.x.b.m.BlogMapper.getFirstPageBlog      : <==      Total: 8
+2020-06-11 10:15:43.903 DEBUG 5624 --- [http-nio-8080-exec-1] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select * from blog.t_blog where t_blog.recommend = true order by t_blog.update_time desc limit 4; 
+2020-06-11 10:15:43.906 DEBUG 5624 --- [http-nio-8080-exec-1] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-06-11 10:15:43.912 DEBUG 5624 --- [http-nio-8080-exec-1] c.x.b.m.BlogMapper.getAllRecommendBlog   : <==      Total: 4
+2020-06-11 10:15:43.916 DEBUG 5624 --- [http-nio-8080-exec-1] c.x.blog.mapper.TagMapper.getAllTag      : ==>  Preparing: select * from t_tag 
+2020-06-11 10:15:43.917 DEBUG 5624 --- [http-nio-8080-exec-1] c.x.blog.mapper.TagMapper.getAllTag      : ==> Parameters: 
+2020-06-11 10:15:43.920 DEBUG 5624 --- [http-nio-8080-exec-1] c.x.blog.mapper.TagMapper.getAllTag      : <==      Total: 11
+2020-06-11 10:18:54.607 DEBUG 5624 --- [http-nio-8080-exec-2] c.x.b.m.B.getFirstPageBlog_COUNT         : ==>  Preparing: SELECT count(0) FROM blog.t_blog b, blog.t_type t, blog.t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2020-06-11 10:18:54.607 DEBUG 5624 --- [http-nio-8080-exec-2] c.x.b.m.B.getFirstPageBlog_COUNT         : ==> Parameters: 
+2020-06-11 10:18:54.608 DEBUG 5624 --- [http-nio-8080-exec-2] c.x.b.m.B.getFirstPageBlog_COUNT         : <==      Total: 1
+2020-06-11 10:18:54.609 DEBUG 5624 --- [http-nio-8080-exec-2] c.x.b.m.BlogMapper.getFirstPageBlog      : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from blog.t_blog b, blog.t_type t,blog.t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2020-06-11 10:18:54.609 DEBUG 5624 --- [http-nio-8080-exec-2] c.x.b.m.BlogMapper.getFirstPageBlog      : ==> Parameters: 10(Integer)
+2020-06-11 10:18:54.617 DEBUG 5624 --- [http-nio-8080-exec-2] c.x.b.m.BlogMapper.getFirstPageBlog      : <==      Total: 8
+2020-06-11 10:18:54.618 DEBUG 5624 --- [http-nio-8080-exec-2] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==>  Preparing: select * from blog.t_blog where t_blog.recommend = true order by t_blog.update_time desc limit 4; 
+2020-06-11 10:18:54.618 DEBUG 5624 --- [http-nio-8080-exec-2] c.x.b.m.BlogMapper.getAllRecommendBlog   : ==> Parameters: 
+2020-06-11 10:18:54.622 DEBUG 5624 --- [http-nio-8080-exec-2] c.x.b.m.BlogMapper.getAllRecommendBlog   : <==      Total: 4
+2020-06-11 10:18:54.623 DEBUG 5624 --- [http-nio-8080-exec-2] c.x.blog.mapper.TagMapper.getAllTag      : ==>  Preparing: select * from t_tag 
+2020-06-11 10:18:54.623 DEBUG 5624 --- [http-nio-8080-exec-2] c.x.blog.mapper.TagMapper.getAllTag      : ==> Parameters: 
+2020-06-11 10:18:54.627 DEBUG 5624 --- [http-nio-8080-exec-2] c.x.blog.mapper.TagMapper.getAllTag      : <==      Total: 11

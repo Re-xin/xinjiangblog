@@ -1,0 +1,920 @@
+2020-06-08 08:17:45.372  INFO 7924 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Starting BlogApplication on LAPTOP-8G1SU5VT with PID 7924 (F:\testprojects\xinjiang\target\classes started by 陈智彬 in F:\testprojects\xinjiang)
+2020-06-08 08:17:45.381 DEBUG 7924 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-06-08 08:17:45.382  INFO 7924 --- [restartedMain] com.xinjiang.blog.BlogApplication        : The following profiles are active: dev
+2020-06-08 08:17:45.460  INFO 7924 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-08 08:17:45.461  INFO 7924 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-08 08:17:55.279  INFO 7924 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-08 08:17:55.322  INFO 7924 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-08 08:17:55.323  INFO 7924 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-08 08:17:55.596  INFO 7924 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-08 08:17:55.596  INFO 7924 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 10135 ms
+2020-06-08 08:17:57.908  INFO 7924 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-08 08:17:58.025  INFO 7924 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-08 08:17:59.483  INFO 7924 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-06-08 08:17:59.750  INFO 7924 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-08 08:17:59.837  INFO 7924 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Started BlogApplication in 17.009 seconds (JVM running for 21.193)
+2020-06-08 08:18:04.307  INFO 7924 --- [http-nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1574821219,1574821242,1574821265] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-06-08 08:18:04.333  INFO 7924 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-08 08:18:04.333  INFO 7924 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-08 08:18:04.344  INFO 7924 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2020-06-08 08:18:05.033  INFO 7924 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-06-08 08:18:05.169 DEBUG 7924 --- [http-nio-8080-exec-1] c.x.b.m.TypeMapper.getAllType_COUNT      : ==>  Preparing: SELECT count(0) FROM t_type 
+2020-06-08 08:18:05.350 DEBUG 7924 --- [http-nio-8080-exec-1] c.x.b.m.TypeMapper.getAllType_COUNT      : ==> Parameters: 
+2020-06-08 08:18:05.453 DEBUG 7924 --- [http-nio-8080-exec-1] c.x.b.m.TypeMapper.getAllType_COUNT      : <==      Total: 1
+2020-06-08 08:18:05.468 DEBUG 7924 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: SELECT * FROM t_type order by id asc LIMIT ? 
+2020-06-08 08:18:05.473 DEBUG 7924 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 10(Integer)
+2020-06-08 08:18:05.492 DEBUG 7924 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 10
+2020-06-08 08:18:07.386 DEBUG 7924 --- [http-nio-8080-exec-1] c.x.b.m.B.getAllBlogQuery_COUNT          : ==>  Preparing: SELECT count(0) FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id 
+2020-06-08 08:18:07.402 DEBUG 7924 --- [http-nio-8080-exec-1] c.x.b.m.B.getAllBlogQuery_COUNT          : ==> Parameters: 
+2020-06-08 08:18:07.435 DEBUG 7924 --- [http-nio-8080-exec-1] c.x.b.m.B.getAllBlogQuery_COUNT          : <==      Total: 1
+2020-06-08 08:18:07.437 DEBUG 7924 --- [http-nio-8080-exec-1] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id order by update_time desc LIMIT ? 
+2020-06-08 08:18:07.439 DEBUG 7924 --- [http-nio-8080-exec-1] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==> Parameters: 3(Integer)
+2020-06-08 08:18:07.471 DEBUG 7924 --- [http-nio-8080-exec-1] c.x.b.mapper.BlogMapper.getAllBlogQuery  : <==      Total: 3
+2020-06-08 08:18:07.472 DEBUG 7924 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-08 08:18:07.473 DEBUG 7924 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-08 08:18:07.477 DEBUG 7924 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 20
+2020-06-08 08:18:10.334 DEBUG 7924 --- [http-nio-8080-exec-6] c.x.b.m.B.getAllBlogQuery_COUNT          : ==>  Preparing: SELECT count(0) FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id 
+2020-06-08 08:18:10.334 DEBUG 7924 --- [http-nio-8080-exec-6] c.x.b.m.B.getAllBlogQuery_COUNT          : ==> Parameters: 
+2020-06-08 08:18:10.337 DEBUG 7924 --- [http-nio-8080-exec-6] c.x.b.m.B.getAllBlogQuery_COUNT          : <==      Total: 1
+2020-06-08 08:18:10.339 DEBUG 7924 --- [http-nio-8080-exec-6] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id order by update_time desc LIMIT ?, ? 
+2020-06-08 08:18:10.340 DEBUG 7924 --- [http-nio-8080-exec-6] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==> Parameters: 3(Integer), 3(Integer)
+2020-06-08 08:18:10.368 DEBUG 7924 --- [http-nio-8080-exec-6] c.x.b.mapper.BlogMapper.getAllBlogQuery  : <==      Total: 1
+2020-06-08 08:18:10.370 DEBUG 7924 --- [http-nio-8080-exec-6] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-08 08:18:10.370 DEBUG 7924 --- [http-nio-8080-exec-6] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-08 08:18:10.373 DEBUG 7924 --- [http-nio-8080-exec-6] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 20
+2020-06-08 08:18:11.601 DEBUG 7924 --- [http-nio-8080-exec-7] c.x.b.m.B.getAllBlogQuery_COUNT          : ==>  Preparing: SELECT count(0) FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id 
+2020-06-08 08:18:11.602 DEBUG 7924 --- [http-nio-8080-exec-7] c.x.b.m.B.getAllBlogQuery_COUNT          : ==> Parameters: 
+2020-06-08 08:18:11.603 DEBUG 7924 --- [http-nio-8080-exec-7] c.x.b.m.B.getAllBlogQuery_COUNT          : <==      Total: 1
+2020-06-08 08:18:11.604 DEBUG 7924 --- [http-nio-8080-exec-7] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id order by update_time desc LIMIT ? 
+2020-06-08 08:18:11.605 DEBUG 7924 --- [http-nio-8080-exec-7] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==> Parameters: 3(Integer)
+2020-06-08 08:18:11.608 DEBUG 7924 --- [http-nio-8080-exec-7] c.x.b.mapper.BlogMapper.getAllBlogQuery  : <==      Total: 3
+2020-06-08 08:18:11.610 DEBUG 7924 --- [http-nio-8080-exec-7] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-08 08:18:11.610 DEBUG 7924 --- [http-nio-8080-exec-7] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-08 08:18:11.613 DEBUG 7924 --- [http-nio-8080-exec-7] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 20
+2020-06-08 08:18:21.932 DEBUG 7924 --- [http-nio-8080-exec-2] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-08 08:18:21.933 DEBUG 7924 --- [http-nio-8080-exec-2] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-08 08:18:21.936 DEBUG 7924 --- [http-nio-8080-exec-2] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 20
+2020-06-08 08:18:21.945 DEBUG 7924 --- [http-nio-8080-exec-2] c.x.blog.mapper.TagMapper.getAllTag      : ==>  Preparing: select * from t_tag 
+2020-06-08 08:18:21.946 DEBUG 7924 --- [http-nio-8080-exec-2] c.x.blog.mapper.TagMapper.getAllTag      : ==> Parameters: 
+2020-06-08 08:18:21.948 DEBUG 7924 --- [http-nio-8080-exec-2] c.x.blog.mapper.TagMapper.getAllTag      : <==      Total: 11
+2020-06-08 08:18:25.106  INFO 7924 --- [Thread-210] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-08 08:18:25.114  INFO 7924 --- [Thread-210] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-06-08 08:18:25.343  INFO 7924 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Starting BlogApplication on LAPTOP-8G1SU5VT with PID 7924 (F:\testprojects\xinjiang\target\classes started by 陈智彬 in F:\testprojects\xinjiang)
+2020-06-08 08:18:25.343 DEBUG 7924 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-06-08 08:18:25.343  INFO 7924 --- [restartedMain] com.xinjiang.blog.BlogApplication        : The following profiles are active: dev
+2020-06-08 08:18:25.903  INFO 7924 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-08 08:18:25.904  INFO 7924 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-08 08:18:25.905  INFO 7924 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-08 08:18:25.956  INFO 7924 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-08 08:18:25.956  INFO 7924 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 610 ms
+2020-06-08 08:18:26.520  INFO 7924 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-08 08:18:26.613  INFO 7924 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-08 08:18:26.930  INFO 7924 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-06-08 08:18:26.944  INFO 7924 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-08 08:18:26.954  INFO 7924 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Started BlogApplication in 1.646 seconds (JVM running for 48.311)
+2020-06-08 08:18:26.956  INFO 7924 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-06-08 08:18:35.291  INFO 7924 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-08 08:18:35.292  INFO 7924 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-08 08:18:35.301  INFO 7924 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2020-06-08 08:21:49.129  INFO 996 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Starting BlogApplication on LAPTOP-8G1SU5VT with PID 996 (F:\testprojects\xinjiang\target\classes started by 陈智彬 in F:\testprojects\xinjiang)
+2020-06-08 08:21:49.131 DEBUG 996 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-06-08 08:21:49.132  INFO 996 --- [restartedMain] com.xinjiang.blog.BlogApplication        : The following profiles are active: dev
+2020-06-08 08:21:49.178  INFO 996 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-08 08:21:49.178  INFO 996 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-08 08:21:51.182  INFO 996 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-08 08:21:51.193  INFO 996 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-08 08:21:51.194  INFO 996 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-08 08:21:51.337  INFO 996 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-08 08:21:51.337  INFO 996 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2158 ms
+2020-06-08 08:21:52.827  INFO 996 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-08 08:21:52.921  INFO 996 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-08 08:21:53.408  INFO 996 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-06-08 08:21:53.442  INFO 996 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-08 08:21:53.451  INFO 996 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Started BlogApplication in 5.037 seconds (JVM running for 6.229)
+2020-06-08 08:22:00.133  INFO 996 --- [http-nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1574821219,1574821242,1574821265] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-06-08 08:22:00.140  INFO 996 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-08 08:22:00.140  INFO 996 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-08 08:22:00.156  INFO 996 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms
+2020-06-08 08:22:00.454  INFO 996 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-06-08 08:22:00.485 DEBUG 996 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-08 08:22:00.600 DEBUG 996 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-08 08:22:00.633 DEBUG 996 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 20
+2020-06-08 08:22:00.639 DEBUG 996 --- [http-nio-8080-exec-1] c.x.blog.mapper.TagMapper.getAllTag      : ==>  Preparing: select * from t_tag 
+2020-06-08 08:22:00.640 DEBUG 996 --- [http-nio-8080-exec-1] c.x.blog.mapper.TagMapper.getAllTag      : ==> Parameters: 
+2020-06-08 08:22:00.642 DEBUG 996 --- [http-nio-8080-exec-1] c.x.blog.mapper.TagMapper.getAllTag      : <==      Total: 11
+2020-06-08 08:24:23.127 DEBUG 996 --- [http-nio-8080-exec-9] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-08 08:24:23.130 DEBUG 996 --- [http-nio-8080-exec-9] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-08 08:24:23.134 DEBUG 996 --- [http-nio-8080-exec-9] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 20
+2020-06-08 08:24:23.138 DEBUG 996 --- [http-nio-8080-exec-9] c.x.blog.mapper.TagMapper.getAllTag      : ==>  Preparing: select * from t_tag 
+2020-06-08 08:24:23.138 DEBUG 996 --- [http-nio-8080-exec-9] c.x.blog.mapper.TagMapper.getAllTag      : ==> Parameters: 
+2020-06-08 08:24:23.141 DEBUG 996 --- [http-nio-8080-exec-9] c.x.blog.mapper.TagMapper.getAllTag      : <==      Total: 11
+2020-06-08 08:25:04.325 DEBUG 996 --- [http-nio-8080-exec-4] c.x.b.m.B.getAllBlogQuery_COUNT          : ==>  Preparing: SELECT count(0) FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id 
+2020-06-08 08:25:04.332 DEBUG 996 --- [http-nio-8080-exec-4] c.x.b.m.B.getAllBlogQuery_COUNT          : ==> Parameters: 
+2020-06-08 08:25:04.333 DEBUG 996 --- [http-nio-8080-exec-4] c.x.b.m.B.getAllBlogQuery_COUNT          : <==      Total: 1
+2020-06-08 08:25:04.341 DEBUG 996 --- [http-nio-8080-exec-4] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id order by update_time desc LIMIT ? 
+2020-06-08 08:25:04.347 DEBUG 996 --- [http-nio-8080-exec-4] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==> Parameters: 10(Integer)
+2020-06-08 08:25:04.351 DEBUG 996 --- [http-nio-8080-exec-4] c.x.b.mapper.BlogMapper.getAllBlogQuery  : <==      Total: 4
+2020-06-08 08:25:04.354 DEBUG 996 --- [http-nio-8080-exec-4] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-08 08:25:04.354 DEBUG 996 --- [http-nio-8080-exec-4] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-08 08:25:04.357 DEBUG 996 --- [http-nio-8080-exec-4] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 20
+2020-06-08 08:25:12.445 DEBUG 996 --- [http-nio-8080-exec-7] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-08 08:25:12.445 DEBUG 996 --- [http-nio-8080-exec-7] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-08 08:25:12.450 DEBUG 996 --- [http-nio-8080-exec-7] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 20
+2020-06-08 08:25:12.452 DEBUG 996 --- [http-nio-8080-exec-7] c.x.blog.mapper.TagMapper.getAllTag      : ==>  Preparing: select * from t_tag 
+2020-06-08 08:25:12.453 DEBUG 996 --- [http-nio-8080-exec-7] c.x.blog.mapper.TagMapper.getAllTag      : ==> Parameters: 
+2020-06-08 08:25:12.454 DEBUG 996 --- [http-nio-8080-exec-7] c.x.blog.mapper.TagMapper.getAllTag      : <==      Total: 11
+2020-06-08 08:25:28.266 DEBUG 996 --- [http-nio-8080-exec-5] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-08 08:25:28.267 DEBUG 996 --- [http-nio-8080-exec-5] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-08 08:25:28.274 DEBUG 996 --- [http-nio-8080-exec-5] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 20
+2020-06-08 08:25:28.277 DEBUG 996 --- [http-nio-8080-exec-5] c.x.blog.mapper.TagMapper.getAllTag      : ==>  Preparing: select * from t_tag 
+2020-06-08 08:25:28.278 DEBUG 996 --- [http-nio-8080-exec-5] c.x.blog.mapper.TagMapper.getAllTag      : ==> Parameters: 
+2020-06-08 08:25:28.279 DEBUG 996 --- [http-nio-8080-exec-5] c.x.blog.mapper.TagMapper.getAllTag      : <==      Total: 11
+2020-06-08 08:33:11.223 DEBUG 996 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-08 08:33:11.223 DEBUG 996 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-08 08:33:11.228 DEBUG 996 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 20
+2020-06-08 08:33:11.230 DEBUG 996 --- [http-nio-8080-exec-1] c.x.blog.mapper.TagMapper.getAllTag      : ==>  Preparing: select * from t_tag 
+2020-06-08 08:33:11.230 DEBUG 996 --- [http-nio-8080-exec-1] c.x.blog.mapper.TagMapper.getAllTag      : ==> Parameters: 
+2020-06-08 08:33:11.231 DEBUG 996 --- [http-nio-8080-exec-1] c.x.blog.mapper.TagMapper.getAllTag      : <==      Total: 11
+2020-06-08 08:37:10.195 DEBUG 996 --- [http-nio-8080-exec-3] c.x.b.m.B.getAllBlogQuery_COUNT          : ==>  Preparing: SELECT count(0) FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id 
+2020-06-08 08:37:10.196 DEBUG 996 --- [http-nio-8080-exec-3] c.x.b.m.B.getAllBlogQuery_COUNT          : ==> Parameters: 
+2020-06-08 08:37:10.200 DEBUG 996 --- [http-nio-8080-exec-3] c.x.b.m.B.getAllBlogQuery_COUNT          : <==      Total: 1
+2020-06-08 08:37:10.202 DEBUG 996 --- [http-nio-8080-exec-3] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id order by update_time desc LIMIT ? 
+2020-06-08 08:37:10.203 DEBUG 996 --- [http-nio-8080-exec-3] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==> Parameters: 10(Integer)
+2020-06-08 08:37:10.210 DEBUG 996 --- [http-nio-8080-exec-3] c.x.b.mapper.BlogMapper.getAllBlogQuery  : <==      Total: 4
+2020-06-08 08:37:10.211 DEBUG 996 --- [http-nio-8080-exec-3] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-08 08:37:10.211 DEBUG 996 --- [http-nio-8080-exec-3] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-08 08:37:10.217 DEBUG 996 --- [http-nio-8080-exec-3] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 20
+2020-06-08 08:40:01.927 DEBUG 996 --- [http-nio-8080-exec-3] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-08 08:40:01.927 DEBUG 996 --- [http-nio-8080-exec-3] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-08 08:40:01.960 DEBUG 996 --- [http-nio-8080-exec-3] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 20
+2020-06-08 08:40:01.963 DEBUG 996 --- [http-nio-8080-exec-3] c.x.blog.mapper.TagMapper.getAllTag      : ==>  Preparing: select * from t_tag 
+2020-06-08 08:40:01.963 DEBUG 996 --- [http-nio-8080-exec-3] c.x.blog.mapper.TagMapper.getAllTag      : ==> Parameters: 
+2020-06-08 08:40:01.967 DEBUG 996 --- [http-nio-8080-exec-3] c.x.blog.mapper.TagMapper.getAllTag      : <==      Total: 11
+2020-06-08 08:59:19.926  INFO 6068 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Starting BlogApplication on LAPTOP-8G1SU5VT with PID 6068 (F:\testprojects\xinjiang\target\classes started by 陈智彬 in F:\testprojects\xinjiang)
+2020-06-08 08:59:19.931 DEBUG 6068 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-06-08 08:59:19.932  INFO 6068 --- [restartedMain] com.xinjiang.blog.BlogApplication        : The following profiles are active: dev
+2020-06-08 08:59:20.041  INFO 6068 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-08 08:59:20.042  INFO 6068 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-08 08:59:23.099  INFO 6068 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-08 08:59:23.147  INFO 6068 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-08 08:59:23.147  INFO 6068 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-08 08:59:23.675  INFO 6068 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-08 08:59:23.675  INFO 6068 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3633 ms
+2020-06-08 08:59:24.841  INFO 6068 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-08 08:59:25.117  INFO 6068 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-08 08:59:25.418  INFO 6068 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-06-08 08:59:25.455  INFO 6068 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-08 08:59:25.466  INFO 6068 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Started BlogApplication in 6.727 seconds (JVM running for 8.521)
+2020-06-08 08:59:30.411  INFO 6068 --- [http-nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1574821219,1574821242,1574821265] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-06-08 08:59:30.442  INFO 6068 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-08 08:59:30.443  INFO 6068 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-08 08:59:30.457  INFO 6068 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2020-06-08 08:59:30.946  INFO 6068 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-06-08 08:59:30.974 DEBUG 6068 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-08 08:59:31.118 DEBUG 6068 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-08 08:59:31.168 DEBUG 6068 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 20
+2020-06-08 08:59:31.174 DEBUG 6068 --- [http-nio-8080-exec-1] c.x.blog.mapper.TagMapper.getAllTag      : ==>  Preparing: select * from t_tag 
+2020-06-08 08:59:31.175 DEBUG 6068 --- [http-nio-8080-exec-1] c.x.blog.mapper.TagMapper.getAllTag      : ==> Parameters: 
+2020-06-08 08:59:31.184 DEBUG 6068 --- [http-nio-8080-exec-1] c.x.blog.mapper.TagMapper.getAllTag      : <==      Total: 11
+2020-06-08 09:00:36.579  INFO 6784 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Starting BlogApplication on LAPTOP-8G1SU5VT with PID 6784 (F:\testprojects\xinjiang\target\classes started by 陈智彬 in F:\testprojects\xinjiang)
+2020-06-08 09:00:36.583 DEBUG 6784 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-06-08 09:00:36.583  INFO 6784 --- [restartedMain] com.xinjiang.blog.BlogApplication        : The following profiles are active: dev
+2020-06-08 09:00:36.733  INFO 6784 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-08 09:00:36.733  INFO 6784 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-08 09:00:38.609  INFO 6784 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-08 09:00:38.628  INFO 6784 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-08 09:00:38.628  INFO 6784 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-08 09:00:38.872  INFO 6784 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-08 09:00:38.881  INFO 6784 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2140 ms
+2020-06-08 09:00:40.767  INFO 6784 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-08 09:00:40.854  INFO 6784 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-08 09:00:41.210  INFO 6784 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-06-08 09:00:41.285  INFO 6784 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-08 09:00:41.304  INFO 6784 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Started BlogApplication in 5.379 seconds (JVM running for 6.52)
+2020-06-08 09:00:41.531  INFO 6784 --- [http-nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1574821219,1574821242,1574821265] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-06-08 09:00:41.539  INFO 6784 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-08 09:00:41.539  INFO 6784 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-08 09:00:41.557  INFO 6784 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 18 ms
+2020-06-08 09:00:41.802  INFO 6784 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-06-08 09:00:41.864 DEBUG 6784 --- [http-nio-8080-exec-1] c.x.b.m.B.getAllBlogQuery_COUNT          : ==>  Preparing: SELECT count(0) FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id 
+2020-06-08 09:00:41.962 DEBUG 6784 --- [http-nio-8080-exec-1] c.x.b.m.B.getAllBlogQuery_COUNT          : ==> Parameters: 
+2020-06-08 09:00:41.998 DEBUG 6784 --- [http-nio-8080-exec-1] c.x.b.m.B.getAllBlogQuery_COUNT          : <==      Total: 1
+2020-06-08 09:00:42.009 DEBUG 6784 --- [http-nio-8080-exec-1] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id order by update_time desc LIMIT ? 
+2020-06-08 09:00:42.021 DEBUG 6784 --- [http-nio-8080-exec-1] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==> Parameters: 10(Integer)
+2020-06-08 09:00:42.030 DEBUG 6784 --- [http-nio-8080-exec-1] c.x.b.mapper.BlogMapper.getAllBlogQuery  : <==      Total: 4
+2020-06-08 09:00:42.048 DEBUG 6784 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-08 09:00:42.050 DEBUG 6784 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-08 09:00:42.058 DEBUG 6784 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 20
+2020-06-08 09:00:43.943 DEBUG 6784 --- [http-nio-8080-exec-6] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-08 09:00:43.943 DEBUG 6784 --- [http-nio-8080-exec-6] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-08 09:00:43.948 DEBUG 6784 --- [http-nio-8080-exec-6] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 20
+2020-06-08 09:16:19.040  INFO 2600 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Starting BlogApplication on LAPTOP-8G1SU5VT with PID 2600 (F:\testprojects\xinjiang\target\classes started by 陈智彬 in F:\testprojects\xinjiang)
+2020-06-08 09:16:19.045 DEBUG 2600 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-06-08 09:16:19.045  INFO 2600 --- [restartedMain] com.xinjiang.blog.BlogApplication        : The following profiles are active: dev
+2020-06-08 09:16:19.311  INFO 2600 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-08 09:16:19.312  INFO 2600 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-08 09:16:23.571  INFO 2600 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-08 09:16:23.585  INFO 2600 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-08 09:16:23.585  INFO 2600 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-08 09:16:23.702  INFO 2600 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-08 09:16:23.702  INFO 2600 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4390 ms
+2020-06-08 09:16:24.978  INFO 2600 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-08 09:16:25.098  INFO 2600 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-08 09:16:25.590  INFO 2600 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-06-08 09:16:25.636  INFO 2600 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-08 09:16:25.654  INFO 2600 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Started BlogApplication in 7.687 seconds (JVM running for 9.476)
+2020-06-08 09:17:48.033  INFO 2600 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-08 09:17:48.033  INFO 2600 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-08 09:17:48.058  INFO 2600 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 25 ms
+2020-06-08 09:18:23.788  INFO 2600 --- [http-nio-8080-exec-2] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1574821219,1574821242,1574821265] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-06-08 09:18:24.011  INFO 2600 --- [http-nio-8080-exec-2] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-06-08 09:18:24.017 DEBUG 2600 --- [http-nio-8080-exec-2] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-08 09:18:24.130 DEBUG 2600 --- [http-nio-8080-exec-2] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-08 09:18:24.162 DEBUG 2600 --- [http-nio-8080-exec-2] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 20
+2020-06-08 09:20:18.233 ERROR 2600 --- [http-nio-8080-exec-9] c.x.b.hander.ControllerExceptionHandler  : Request URL:http://localhost:8080/admin/blogs,Exception:{}
+
+java.lang.NullPointerException: null
+	at com.xinjiang.blog.controller.admin.BlogController.post(BlogController.java:78)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+2020-06-08 09:20:18.248  WARN 2600 --- [http-nio-8080-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.NullPointerException]
+2020-06-08 09:21:54.135 DEBUG 2600 --- [http-nio-8080-exec-8] c.x.b.m.U.findByUsernameAndPassword      : ==>  Preparing: select * from t_user where username=? and password=? 
+2020-06-08 09:21:54.188 DEBUG 2600 --- [http-nio-8080-exec-8] c.x.b.m.U.findByUsernameAndPassword      : ==> Parameters: xinjiang(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-06-08 09:21:54.210 DEBUG 2600 --- [http-nio-8080-exec-8] c.x.b.m.U.findByUsernameAndPassword      : <==      Total: 1
+2020-06-08 09:21:59.461 DEBUG 2600 --- [http-nio-8080-exec-5] c.x.b.m.B.getAllBlogQuery_COUNT          : ==>  Preparing: SELECT count(0) FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id 
+2020-06-08 09:21:59.465 DEBUG 2600 --- [http-nio-8080-exec-5] c.x.b.m.B.getAllBlogQuery_COUNT          : ==> Parameters: 
+2020-06-08 09:21:59.467 DEBUG 2600 --- [http-nio-8080-exec-5] c.x.b.m.B.getAllBlogQuery_COUNT          : <==      Total: 1
+2020-06-08 09:21:59.473 DEBUG 2600 --- [http-nio-8080-exec-5] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id order by update_time desc LIMIT ? 
+2020-06-08 09:21:59.478 DEBUG 2600 --- [http-nio-8080-exec-5] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==> Parameters: 10(Integer)
+2020-06-08 09:21:59.482 DEBUG 2600 --- [http-nio-8080-exec-5] c.x.b.mapper.BlogMapper.getAllBlogQuery  : <==      Total: 4
+2020-06-08 09:21:59.484 DEBUG 2600 --- [http-nio-8080-exec-5] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-08 09:21:59.485 DEBUG 2600 --- [http-nio-8080-exec-5] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-08 09:21:59.488 DEBUG 2600 --- [http-nio-8080-exec-5] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 20
+2020-06-08 09:22:01.131 DEBUG 2600 --- [http-nio-8080-exec-4] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-08 09:22:01.133 DEBUG 2600 --- [http-nio-8080-exec-4] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-08 09:22:01.139 DEBUG 2600 --- [http-nio-8080-exec-4] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 20
+2020-06-08 09:22:19.202 DEBUG 2600 --- [http-nio-8080-exec-7] c.x.blog.mapper.BlogMapper.saveBlog      : ==>  Preparing: insert into blog.t_blog (id,title, content, first_picture, flag, views, comment_count, appreciation, share_statement, commentabled, published, recommend, create_time, update_time, type_id, user_id, description) values (?,?,?,?,?,?,?,?, ?,?,?,?,?, ?,?,?,?); 
+2020-06-08 09:22:19.232 DEBUG 2600 --- [http-nio-8080-exec-7] c.x.blog.mapper.BlogMapper.saveBlog      : ==> Parameters: null, 2020,在路上(String), 有些鸟儿注定是不会被关在笼子里的，因为它们的每一片羽毛都闪耀着自由的光辉。世界很大，我想出去看看，那就尽管去吧，外面的天地很精彩，哪怕遍体鳞伤也在所不惜，拼搏的人生从来不害怕尝试！2020，在路上！未来的新篇章等着我去书写！......(String), aaa(String), null, 0(Integer), 0(Integer), true(Boolean), false(Boolean), true(Boolean), true(Boolean), true(Boolean), 2020-06-08 09:22:19.199(Timestamp), 2020-06-08 09:22:19.199(Timestamp), 1(Long), 1(Long), null
+2020-06-08 09:22:19.239 DEBUG 2600 --- [http-nio-8080-exec-7] c.x.blog.mapper.BlogMapper.saveBlog      : <==    Updates: 1
+2020-06-08 09:22:19.320 DEBUG 2600 --- [http-nio-8080-exec-8] c.x.b.m.B.getAllBlogQuery_COUNT          : ==>  Preparing: SELECT count(0) FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id 
+2020-06-08 09:22:19.320 DEBUG 2600 --- [http-nio-8080-exec-8] c.x.b.m.B.getAllBlogQuery_COUNT          : ==> Parameters: 
+2020-06-08 09:22:19.321 DEBUG 2600 --- [http-nio-8080-exec-8] c.x.b.m.B.getAllBlogQuery_COUNT          : <==      Total: 1
+2020-06-08 09:22:19.323 DEBUG 2600 --- [http-nio-8080-exec-8] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id order by update_time desc LIMIT ? 
+2020-06-08 09:22:19.323 DEBUG 2600 --- [http-nio-8080-exec-8] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==> Parameters: 10(Integer)
+2020-06-08 09:22:19.326 DEBUG 2600 --- [http-nio-8080-exec-8] c.x.b.mapper.BlogMapper.getAllBlogQuery  : <==      Total: 5
+2020-06-08 09:22:19.327 DEBUG 2600 --- [http-nio-8080-exec-8] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-08 09:22:19.327 DEBUG 2600 --- [http-nio-8080-exec-8] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-08 09:22:19.329 DEBUG 2600 --- [http-nio-8080-exec-8] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 20
+2020-06-08 09:30:41.184 DEBUG 2600 --- [http-nio-8080-exec-9] c.x.b.m.TypeMapper.getAllType_COUNT      : ==>  Preparing: SELECT count(0) FROM t_type 
+2020-06-08 09:30:41.185 DEBUG 2600 --- [http-nio-8080-exec-9] c.x.b.m.TypeMapper.getAllType_COUNT      : ==> Parameters: 
+2020-06-08 09:30:41.186 DEBUG 2600 --- [http-nio-8080-exec-9] c.x.b.m.TypeMapper.getAllType_COUNT      : <==      Total: 1
+2020-06-08 09:30:41.187 DEBUG 2600 --- [http-nio-8080-exec-9] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: SELECT * FROM t_type order by id asc LIMIT ? 
+2020-06-08 09:30:41.188 DEBUG 2600 --- [http-nio-8080-exec-9] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 10(Integer)
+2020-06-08 09:30:41.191 DEBUG 2600 --- [http-nio-8080-exec-9] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 10
+2020-06-08 09:30:46.780 DEBUG 2600 --- [http-nio-8080-exec-5] c.x.b.mapper.TypeMapper.deleteTypeById   : ==>  Preparing: delete from t_type where id = ? 
+2020-06-08 09:30:46.812 DEBUG 2600 --- [http-nio-8080-exec-5] c.x.b.mapper.TypeMapper.deleteTypeById   : ==> Parameters: 2(Long)
+2020-06-08 09:30:46.952 ERROR 2600 --- [http-nio-8080-exec-5] c.x.b.hander.ControllerExceptionHandler  : Request URL:http://localhost:8080/admin/types/2/delete,Exception:{}
+
+org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`blog`.`t_blog`, CONSTRAINT `FK292449gwg5yf7ocdlmswv9w4j` FOREIGN KEY (`type_id`) REFERENCES `t_type` (`id`))
+### The error may exist in com/xinjiang/blog/mapper/TypeMapper.java (best guess)
+### The error may involve com.xinjiang.blog.mapper.TypeMapper.deleteTypeById-Inline
+### The error occurred while setting parameters
+### SQL: delete from t_type where id = ?
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`blog`.`t_blog`, CONSTRAINT `FK292449gwg5yf7ocdlmswv9w4j` FOREIGN KEY (`type_id`) REFERENCES `t_type` (`id`))
+; Cannot delete or update a parent row: a foreign key constraint fails (`blog`.`t_blog`, CONSTRAINT `FK292449gwg5yf7ocdlmswv9w4j` FOREIGN KEY (`type_id`) REFERENCES `t_type` (`id`)); nested exception is java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`blog`.`t_blog`, CONSTRAINT `FK292449gwg5yf7ocdlmswv9w4j` FOREIGN KEY (`type_id`) REFERENCES `t_type` (`id`))
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:88)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440)
+	at com.sun.proxy.$Proxy75.delete(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.delete(SqlSessionTemplate.java:303)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:72)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:144)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy82.deleteTypeById(Unknown Source)
+	at com.xinjiang.blog.service.impl.TypeServiceimpl.deleteTypeById(TypeServiceimpl.java:51)
+	at com.xinjiang.blog.service.impl.TypeServiceimpl$$FastClassBySpringCGLIB$$785dda8f.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:366)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.xinjiang.blog.service.impl.TypeServiceimpl$$EnhancerBySpringCGLIB$$c44ed945.deleteTypeById(<generated>)
+	at com.xinjiang.blog.controller.admin.TypeController.delete(TypeController.java:88)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`blog`.`t_blog`, CONSTRAINT `FK292449gwg5yf7ocdlmswv9w4j` FOREIGN KEY (`type_id`) REFERENCES `t_type` (`id`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3051)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3049)
+	at com.alibaba.druid.wall.WallFilter.preparedStatement_execute(WallFilter.java:619)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3049)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3049)
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:498)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:59)
+	at com.sun.proxy.$Proxy101.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy99.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.delete(DefaultSqlSession.java:212)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	... 72 common frames omitted
+
+2020-06-08 09:30:46.953  WARN 2600 --- [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`blog`.`t_blog`, CONSTRAINT `FK292449gwg5yf7ocdlmswv9w4j` FOREIGN KEY (`type_id`) REFERENCES `t_type` (`id`))
+### The error may exist in com/xinjiang/blog/mapper/TypeMapper.java (best guess)
+### The error may involve com.xinjiang.blog.mapper.TypeMapper.deleteTypeById-Inline
+### The error occurred while setting parameters
+### SQL: delete from t_type where id = ?
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`blog`.`t_blog`, CONSTRAINT `FK292449gwg5yf7ocdlmswv9w4j` FOREIGN KEY (`type_id`) REFERENCES `t_type` (`id`))
+; Cannot delete or update a parent row: a foreign key constraint fails (`blog`.`t_blog`, CONSTRAINT `FK292449gwg5yf7ocdlmswv9w4j` FOREIGN KEY (`type_id`) REFERENCES `t_type` (`id`)); nested exception is java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`blog`.`t_blog`, CONSTRAINT `FK292449gwg5yf7ocdlmswv9w4j` FOREIGN KEY (`type_id`) REFERENCES `t_type` (`id`))]
+2020-06-08 09:44:56.017  INFO 15468 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Starting BlogApplication on LAPTOP-8G1SU5VT with PID 15468 (F:\testprojects\xinjiang\target\classes started by 陈智彬 in F:\testprojects\xinjiang)
+2020-06-08 09:44:56.019 DEBUG 15468 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-06-08 09:44:56.019  INFO 15468 --- [restartedMain] com.xinjiang.blog.BlogApplication        : The following profiles are active: dev
+2020-06-08 09:44:56.052  INFO 15468 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-08 09:44:56.053  INFO 15468 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-08 09:44:59.454  INFO 15468 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-08 09:44:59.464  INFO 15468 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-08 09:44:59.465  INFO 15468 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-08 09:44:59.705  INFO 15468 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-08 09:44:59.706  INFO 15468 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3653 ms
+2020-06-08 09:45:01.170  INFO 15468 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-08 09:45:01.274  INFO 15468 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-08 09:45:01.653  INFO 15468 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-06-08 09:45:01.689  INFO 15468 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-08 09:45:01.698  INFO 15468 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Started BlogApplication in 6.336 seconds (JVM running for 7.733)
+2020-06-08 09:45:12.819  INFO 15468 --- [http-nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1574821219,1574821242,1574821265; JSESSIONID=9686A615DFD01ADB3C44DD95A394631D] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-06-08 09:45:12.827  INFO 15468 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-08 09:45:12.827  INFO 15468 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-08 09:45:12.839  INFO 15468 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2020-06-08 09:45:13.222  INFO 15468 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-06-08 09:45:13.253 DEBUG 15468 --- [http-nio-8080-exec-1] c.x.b.m.TypeMapper.getAllType_COUNT      : ==>  Preparing: SELECT count(0) FROM t_type 
+2020-06-08 09:45:13.462 DEBUG 15468 --- [http-nio-8080-exec-1] c.x.b.m.TypeMapper.getAllType_COUNT      : ==> Parameters: 
+2020-06-08 09:45:13.504 DEBUG 15468 --- [http-nio-8080-exec-1] c.x.b.m.TypeMapper.getAllType_COUNT      : <==      Total: 1
+2020-06-08 09:45:13.510 DEBUG 15468 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: SELECT * FROM t_type order by id asc LIMIT ? 
+2020-06-08 09:45:13.513 DEBUG 15468 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 10(Integer)
+2020-06-08 09:45:13.517 DEBUG 15468 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 10
+2020-06-08 09:45:18.761 DEBUG 15468 --- [http-nio-8080-exec-5] c.x.b.mapper.TypeMapper.deleteTypeById   : ==>  Preparing: update t_blog set type_id = null WHERE type_id = ?;delete from t_type where id = ? 
+2020-06-08 09:45:19.307 ERROR 15468 --- [http-nio-8080-exec-5] c.x.b.hander.ControllerExceptionHandler  : Request URL:http://localhost:8080/admin/types/3/delete,Exception:{}
+
+org.springframework.jdbc.UncategorizedSQLException: 
+### Error updating database.  Cause: java.sql.SQLException: sql injection violation, multi-statement not allow : update t_blog set type_id = null WHERE type_id = ?;delete from t_type where id = ?
+### The error may exist in com/xinjiang/blog/mapper/TypeMapper.java (best guess)
+### The error may involve com.xinjiang.blog.mapper.TypeMapper.deleteTypeById
+### The error occurred while executing an update
+### SQL: update t_blog set type_id = null WHERE type_id = ?;delete from t_type where id = ?
+### Cause: java.sql.SQLException: sql injection violation, multi-statement not allow : update t_blog set type_id = null WHERE type_id = ?;delete from t_type where id = ?
+; uncategorized SQLException; SQL state [null]; error code [0]; sql injection violation, multi-statement not allow : update t_blog set type_id = null WHERE type_id = ?;delete from t_type where id = ?; nested exception is java.sql.SQLException: sql injection violation, multi-statement not allow : update t_blog set type_id = null WHERE type_id = ?;delete from t_type where id = ?
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:89)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:88)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440)
+	at com.sun.proxy.$Proxy75.delete(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.delete(SqlSessionTemplate.java:303)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:72)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:144)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy82.deleteTypeById(Unknown Source)
+	at com.xinjiang.blog.service.impl.TypeServiceimpl.deleteTypeById(TypeServiceimpl.java:51)
+	at com.xinjiang.blog.service.impl.TypeServiceimpl$$FastClassBySpringCGLIB$$785dda8f.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:366)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.xinjiang.blog.service.impl.TypeServiceimpl$$EnhancerBySpringCGLIB$$ffd1a073.deleteTypeById(<generated>)
+	at com.xinjiang.blog.controller.admin.TypeController.delete(TypeController.java:88)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.sql.SQLException: sql injection violation, multi-statement not allow : update t_blog set type_id = null WHERE type_id = ?;delete from t_type where id = ?
+	at com.alibaba.druid.wall.WallFilter.checkInternal(WallFilter.java:800)
+	at com.alibaba.druid.wall.WallFilter.connection_prepareStatement(WallFilter.java:251)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_prepareStatement(FilterChainImpl.java:473)
+	at com.alibaba.druid.filter.FilterAdapter.connection_prepareStatement(FilterAdapter.java:929)
+	at com.alibaba.druid.filter.FilterEventAdapter.connection_prepareStatement(FilterEventAdapter.java:122)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_prepareStatement(FilterChainImpl.java:473)
+	at com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl.prepareStatement(ConnectionProxyImpl.java:342)
+	at com.alibaba.druid.pool.DruidPooledConnection.prepareStatement(DruidPooledConnection.java:349)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.ConnectionLogger.invoke(ConnectionLogger.java:55)
+	at com.sun.proxy.$Proxy102.prepareStatement(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.instantiateStatement(PreparedStatementHandler.java:86)
+	at org.apache.ibatis.executor.statement.BaseStatementHandler.prepare(BaseStatementHandler.java:88)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.prepare(RoutingStatementHandler.java:59)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:87)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy101.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.delete(DefaultSqlSession.java:212)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	... 72 common frames omitted
+
+2020-06-08 09:45:19.374  WARN 15468 --- [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.jdbc.UncategorizedSQLException: 
+### Error updating database.  Cause: java.sql.SQLException: sql injection violation, multi-statement not allow : update t_blog set type_id = null WHERE type_id = ?;delete from t_type where id = ?
+### The error may exist in com/xinjiang/blog/mapper/TypeMapper.java (best guess)
+### The error may involve com.xinjiang.blog.mapper.TypeMapper.deleteTypeById
+### The error occurred while executing an update
+### SQL: update t_blog set type_id = null WHERE type_id = ?;delete from t_type where id = ?
+### Cause: java.sql.SQLException: sql injection violation, multi-statement not allow : update t_blog set type_id = null WHERE type_id = ?;delete from t_type where id = ?
+; uncategorized SQLException; SQL state [null]; error code [0]; sql injection violation, multi-statement not allow : update t_blog set type_id = null WHERE type_id = ?;delete from t_type where id = ?; nested exception is java.sql.SQLException: sql injection violation, multi-statement not allow : update t_blog set type_id = null WHERE type_id = ?;delete from t_type where id = ?]
+2020-06-08 09:47:43.740 DEBUG 15468 --- [http-nio-8080-exec-9] c.x.b.m.TypeMapper.getAllType_COUNT      : ==>  Preparing: SELECT count(0) FROM t_type 
+2020-06-08 09:47:43.740 DEBUG 15468 --- [http-nio-8080-exec-9] c.x.b.m.TypeMapper.getAllType_COUNT      : ==> Parameters: 
+2020-06-08 09:47:43.741 DEBUG 15468 --- [http-nio-8080-exec-9] c.x.b.m.TypeMapper.getAllType_COUNT      : <==      Total: 1
+2020-06-08 09:47:43.742 DEBUG 15468 --- [http-nio-8080-exec-9] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: SELECT * FROM t_type order by id asc LIMIT ? 
+2020-06-08 09:47:43.743 DEBUG 15468 --- [http-nio-8080-exec-9] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 10(Integer)
+2020-06-08 09:47:43.747 DEBUG 15468 --- [http-nio-8080-exec-9] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 10
+2020-06-08 09:47:47.449 DEBUG 15468 --- [http-nio-8080-exec-6] c.x.b.mapper.TypeMapper.deleteTypeById   : ==>  Preparing: update t_blog set type_id = null WHERE type_id = ?;delete from t_type where id = ? 
+2020-06-08 09:47:47.455 ERROR 15468 --- [http-nio-8080-exec-6] c.x.b.hander.ControllerExceptionHandler  : Request URL:http://localhost:8080/admin/types/9/delete,Exception:{}
+
+org.springframework.jdbc.UncategorizedSQLException: 
+### Error updating database.  Cause: java.sql.SQLException: sql injection violation, multi-statement not allow : update t_blog set type_id = null WHERE type_id = ?;delete from t_type where id = ?
+### The error may exist in com/xinjiang/blog/mapper/TypeMapper.java (best guess)
+### The error may involve com.xinjiang.blog.mapper.TypeMapper.deleteTypeById
+### The error occurred while executing an update
+### SQL: update t_blog set type_id = null WHERE type_id = ?;delete from t_type where id = ?
+### Cause: java.sql.SQLException: sql injection violation, multi-statement not allow : update t_blog set type_id = null WHERE type_id = ?;delete from t_type where id = ?
+; uncategorized SQLException; SQL state [null]; error code [0]; sql injection violation, multi-statement not allow : update t_blog set type_id = null WHERE type_id = ?;delete from t_type where id = ?; nested exception is java.sql.SQLException: sql injection violation, multi-statement not allow : update t_blog set type_id = null WHERE type_id = ?;delete from t_type where id = ?
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:89)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:88)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:440)
+	at com.sun.proxy.$Proxy75.delete(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.delete(SqlSessionTemplate.java:303)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:72)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:144)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy82.deleteTypeById(Unknown Source)
+	at com.xinjiang.blog.service.impl.TypeServiceimpl.deleteTypeById(TypeServiceimpl.java:51)
+	at com.xinjiang.blog.service.impl.TypeServiceimpl$$FastClassBySpringCGLIB$$785dda8f.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:366)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.xinjiang.blog.service.impl.TypeServiceimpl$$EnhancerBySpringCGLIB$$ffd1a073.deleteTypeById(<generated>)
+	at com.xinjiang.blog.controller.admin.TypeController.delete(TypeController.java:88)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.sql.SQLException: sql injection violation, multi-statement not allow : update t_blog set type_id = null WHERE type_id = ?;delete from t_type where id = ?
+	at com.alibaba.druid.wall.WallFilter.checkInternal(WallFilter.java:800)
+	at com.alibaba.druid.wall.WallFilter.connection_prepareStatement(WallFilter.java:251)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_prepareStatement(FilterChainImpl.java:473)
+	at com.alibaba.druid.filter.FilterAdapter.connection_prepareStatement(FilterAdapter.java:929)
+	at com.alibaba.druid.filter.FilterEventAdapter.connection_prepareStatement(FilterEventAdapter.java:122)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_prepareStatement(FilterChainImpl.java:473)
+	at com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl.prepareStatement(ConnectionProxyImpl.java:342)
+	at com.alibaba.druid.pool.DruidPooledConnection.prepareStatement(DruidPooledConnection.java:349)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.ConnectionLogger.invoke(ConnectionLogger.java:55)
+	at com.sun.proxy.$Proxy102.prepareStatement(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.instantiateStatement(PreparedStatementHandler.java:86)
+	at org.apache.ibatis.executor.statement.BaseStatementHandler.prepare(BaseStatementHandler.java:88)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.prepare(RoutingStatementHandler.java:59)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:87)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy101.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.delete(DefaultSqlSession.java:212)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426)
+	... 72 common frames omitted
+
+2020-06-08 09:47:47.457  WARN 15468 --- [http-nio-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.jdbc.UncategorizedSQLException: 
+### Error updating database.  Cause: java.sql.SQLException: sql injection violation, multi-statement not allow : update t_blog set type_id = null WHERE type_id = ?;delete from t_type where id = ?
+### The error may exist in com/xinjiang/blog/mapper/TypeMapper.java (best guess)
+### The error may involve com.xinjiang.blog.mapper.TypeMapper.deleteTypeById
+### The error occurred while executing an update
+### SQL: update t_blog set type_id = null WHERE type_id = ?;delete from t_type where id = ?
+### Cause: java.sql.SQLException: sql injection violation, multi-statement not allow : update t_blog set type_id = null WHERE type_id = ?;delete from t_type where id = ?
+; uncategorized SQLException; SQL state [null]; error code [0]; sql injection violation, multi-statement not allow : update t_blog set type_id = null WHERE type_id = ?;delete from t_type where id = ?; nested exception is java.sql.SQLException: sql injection violation, multi-statement not allow : update t_blog set type_id = null WHERE type_id = ?;delete from t_type where id = ?]
+2020-06-08 09:48:15.239  INFO 15468 --- [Thread-193] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-08 09:48:15.246  INFO 15468 --- [Thread-193] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-06-08 09:48:15.450  INFO 15468 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Starting BlogApplication on LAPTOP-8G1SU5VT with PID 15468 (F:\testprojects\xinjiang\target\classes started by 陈智彬 in F:\testprojects\xinjiang)
+2020-06-08 09:48:15.451 DEBUG 15468 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-06-08 09:48:15.451  INFO 15468 --- [restartedMain] com.xinjiang.blog.BlogApplication        : The following profiles are active: dev
+2020-06-08 09:48:16.005  INFO 15468 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-08 09:48:16.007  INFO 15468 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-08 09:48:16.008  INFO 15468 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-08 09:48:16.033  INFO 15468 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-08 09:48:16.033  INFO 15468 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 580 ms
+2020-06-08 09:48:16.423  INFO 15468 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-08 09:48:16.460  INFO 15468 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-08 09:48:16.657  INFO 15468 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-06-08 09:48:16.668  INFO 15468 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-08 09:48:16.675  INFO 15468 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Started BlogApplication in 1.279 seconds (JVM running for 202.706)
+2020-06-08 09:48:16.677  INFO 15468 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-06-08 09:48:23.542  INFO 15468 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-08 09:48:23.543  INFO 15468 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-08 09:48:23.561  INFO 15468 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 18 ms
+2020-06-08 09:48:23.602  INFO 15468 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} inited
+2020-06-08 09:48:23.607 DEBUG 15468 --- [http-nio-8080-exec-1] c.x.b.mapper.TypeMapper.deleteTypeById   : ==>  Preparing: delete from t_type where id = ? 
+2020-06-08 09:48:23.609 DEBUG 15468 --- [http-nio-8080-exec-1] c.x.b.mapper.TypeMapper.deleteTypeById   : ==> Parameters: 9(Long)
+2020-06-08 09:48:23.627 DEBUG 15468 --- [http-nio-8080-exec-1] c.x.b.mapper.TypeMapper.deleteTypeById   : <==    Updates: 1
+2020-06-08 09:48:23.660 DEBUG 15468 --- [http-nio-8080-exec-2] c.x.b.m.TypeMapper.getAllType_COUNT      : ==>  Preparing: SELECT count(0) FROM t_type 
+2020-06-08 09:48:23.661 DEBUG 15468 --- [http-nio-8080-exec-2] c.x.b.m.TypeMapper.getAllType_COUNT      : ==> Parameters: 
+2020-06-08 09:48:23.664 DEBUG 15468 --- [http-nio-8080-exec-2] c.x.b.m.TypeMapper.getAllType_COUNT      : <==      Total: 1
+2020-06-08 09:48:23.665 DEBUG 15468 --- [http-nio-8080-exec-2] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: SELECT * FROM t_type order by id asc LIMIT ? 
+2020-06-08 09:48:23.666 DEBUG 15468 --- [http-nio-8080-exec-2] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 10(Integer)
+2020-06-08 09:48:23.668 DEBUG 15468 --- [http-nio-8080-exec-2] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 10
+2020-06-08 09:51:35.595  INFO 15468 --- [Thread-200] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-08 09:51:35.598  INFO 15468 --- [Thread-200] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} closed
+2020-06-08 09:51:35.769  INFO 15468 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Starting BlogApplication on LAPTOP-8G1SU5VT with PID 15468 (F:\testprojects\xinjiang\target\classes started by 陈智彬 in F:\testprojects\xinjiang)
+2020-06-08 09:51:35.769 DEBUG 15468 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-06-08 09:51:35.769  INFO 15468 --- [restartedMain] com.xinjiang.blog.BlogApplication        : The following profiles are active: dev
+2020-06-08 09:51:36.169  INFO 15468 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-08 09:51:36.169  INFO 15468 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-08 09:51:36.170  INFO 15468 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-08 09:51:36.219  INFO 15468 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-08 09:51:36.219  INFO 15468 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 448 ms
+2020-06-08 09:51:36.374  WARN 15468 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'blogController': Unsatisfied dependency expressed through field 'typeService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.xinjiang.blog.service.TypeService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-06-08 09:51:36.375  INFO 15468 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-06-08 09:51:36.381  INFO 15468 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-06-08 09:51:36.530 ERROR 15468 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field typeService in com.xinjiang.blog.controller.admin.BlogController required a bean of type 'com.xinjiang.blog.service.TypeService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.xinjiang.blog.service.TypeService' in your configuration.
+
+2020-06-08 09:51:36.532  WARN 15468 --- [restartedMain] o.s.boot.SpringApplication               : Unable to close ApplicationContext
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springApplicationAdminRegistrar' defined in class path resource [org/springframework/boot/autoconfigure/admin/SpringApplicationAdminJmxAutoConfiguration.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:512)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.event.AbstractApplicationEventMulticaster.retrieveApplicationListeners(AbstractApplicationEventMulticaster.java:245)
+	at org.springframework.context.event.AbstractApplicationEventMulticaster.getApplicationListeners(AbstractApplicationEventMulticaster.java:197)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:134)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:403)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:360)
+	at org.springframework.boot.availability.AvailabilityChangeEvent.publish(AvailabilityChangeEvent.java:81)
+	at org.springframework.boot.availability.AvailabilityChangeEvent.publish(AvailabilityChangeEvent.java:67)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:167)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:978)
+	at org.springframework.boot.SpringApplication.handleRunFailure(SpringApplication.java:814)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:325)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.xinjiang.blog.BlogApplication.main(BlogApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91)
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:109)
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92)
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101)
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:251)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1141)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1114)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:506)
+	... 23 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:814)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1282)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:297)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor.postProcessBeforeInitialization(ConfigurationClassPostProcessor.java:456)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:416)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	... 45 common frames omitted
+
+2020-06-08 10:00:22.417  INFO 15468 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Starting BlogApplication on LAPTOP-8G1SU5VT with PID 15468 (F:\testprojects\xinjiang\target\classes started by 陈智彬 in F:\testprojects\xinjiang)
+2020-06-08 10:00:22.417 DEBUG 15468 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-06-08 10:00:22.417  INFO 15468 --- [restartedMain] com.xinjiang.blog.BlogApplication        : The following profiles are active: dev
+2020-06-08 10:00:22.886  INFO 15468 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-08 10:00:22.888  INFO 15468 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-08 10:00:22.888  INFO 15468 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-08 10:00:22.914  INFO 15468 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-06-08 10:00:22.914  INFO 15468 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 495 ms
+2020-06-08 10:00:23.243  INFO 15468 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-08 10:00:23.278  INFO 15468 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-08 10:00:23.462  INFO 15468 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-06-08 10:00:23.474  INFO 15468 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-08 10:00:23.477  INFO 15468 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Started BlogApplication in 1.163 seconds (JVM running for 929.512)
+2020-06-08 10:00:23.478  INFO 15468 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-06-08 10:01:28.450  INFO 15468 --- [Thread-378] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-08 10:01:28.640  INFO 15468 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Starting BlogApplication on LAPTOP-8G1SU5VT with PID 15468 (F:\testprojects\xinjiang\target\classes started by 陈智彬 in F:\testprojects\xinjiang)
+2020-06-08 10:01:28.640 DEBUG 15468 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-06-08 10:01:28.640  INFO 15468 --- [restartedMain] com.xinjiang.blog.BlogApplication        : The following profiles are active: dev
+2020-06-08 10:01:29.428  INFO 15468 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-08 10:01:29.429  INFO 15468 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-08 10:01:29.429  INFO 15468 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-08 10:01:29.442  INFO 15468 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-06-08 10:01:29.442  INFO 15468 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 800 ms
+2020-06-08 10:01:29.814  INFO 15468 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-08 10:01:29.856  INFO 15468 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-08 10:01:30.076  INFO 15468 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-06-08 10:01:30.090  INFO 15468 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-08 10:01:30.093  INFO 15468 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Started BlogApplication in 1.488 seconds (JVM running for 996.127)
+2020-06-08 10:01:30.095  INFO 15468 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged

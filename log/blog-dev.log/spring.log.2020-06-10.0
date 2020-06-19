@@ -1,0 +1,675 @@
+2020-06-10 09:41:13.432  INFO 6996 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Starting BlogApplication on LAPTOP-8G1SU5VT with PID 6996 (F:\testprojects\xinjiang\target\classes started by 陈智彬 in F:\testprojects\xinjiang)
+2020-06-10 09:41:13.436 DEBUG 6996 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-06-10 09:41:13.436  INFO 6996 --- [restartedMain] com.xinjiang.blog.BlogApplication        : The following profiles are active: dev
+2020-06-10 09:41:13.518  INFO 6996 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-10 09:41:13.518  INFO 6996 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-10 09:41:18.305  INFO 6996 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-10 09:41:18.331  INFO 6996 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-10 09:41:18.332  INFO 6996 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-10 09:41:18.466  INFO 6996 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-10 09:41:18.466  INFO 6996 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4948 ms
+2020-06-10 09:41:21.034  INFO 6996 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-10 09:41:21.160  INFO 6996 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-10 09:41:22.411  INFO 6996 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-06-10 09:41:22.514  INFO 6996 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-10 09:41:22.530  INFO 6996 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Started BlogApplication in 11.751 seconds (JVM running for 15.377)
+2020-06-10 09:41:41.422  INFO 6996 --- [http-nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1574821219,1574821242,1574821265] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-06-10 09:41:41.436  INFO 6996 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-10 09:41:41.437  INFO 6996 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-10 09:41:41.454  INFO 6996 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms
+2020-06-10 09:41:41.926  INFO 6996 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-06-10 09:41:41.984 DEBUG 6996 --- [http-nio-8080-exec-1] c.x.b.m.B.getAllBlogQuery_COUNT          : ==>  Preparing: SELECT count(0) FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id 
+2020-06-10 09:41:42.213 DEBUG 6996 --- [http-nio-8080-exec-1] c.x.b.m.B.getAllBlogQuery_COUNT          : ==> Parameters: 
+2020-06-10 09:41:42.279 DEBUG 6996 --- [http-nio-8080-exec-1] c.x.b.m.B.getAllBlogQuery_COUNT          : <==      Total: 1
+2020-06-10 09:41:42.296 DEBUG 6996 --- [http-nio-8080-exec-1] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id order by update_time desc LIMIT ? 
+2020-06-10 09:41:42.306 DEBUG 6996 --- [http-nio-8080-exec-1] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==> Parameters: 10(Integer)
+2020-06-10 09:41:42.317 DEBUG 6996 --- [http-nio-8080-exec-1] c.x.b.mapper.BlogMapper.getAllBlogQuery  : <==      Total: 5
+2020-06-10 09:41:42.325 DEBUG 6996 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-10 09:41:42.326 DEBUG 6996 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-10 09:41:42.332 DEBUG 6996 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 18
+2020-06-10 09:41:46.577 DEBUG 6996 --- [http-nio-8080-exec-4] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-10 09:41:46.577 DEBUG 6996 --- [http-nio-8080-exec-4] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-10 09:41:46.589 DEBUG 6996 --- [http-nio-8080-exec-4] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 18
+2020-06-10 09:41:46.674 ERROR 6996 --- [http-nio-8080-exec-4] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-4] Exception processing template "admin/blogs-input": An error happened during template parsing (template: "class path resource [templates/admin/blogs-input.html]")
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/admin/blogs-input.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.attoparser.ParseException: An error happened during template parsing (template: "class path resource [templates/admin/blogs-input.html]" - line 122, col 114)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 51 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/admin/blogs-input.html]" - line 122, col 114)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:239)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseStandalone(TemplateManager.java:302)
+	at org.thymeleaf.standard.expression.FragmentExpression.resolveExecutedFragmentExpression(FragmentExpression.java:588)
+	at org.thymeleaf.standard.expression.FragmentExpression.executeFragmentExpression(FragmentExpression.java:391)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:89)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.expression.FragmentExpression.createExecutedFragmentExpressionParameters(FragmentExpression.java:529)
+	at org.thymeleaf.standard.expression.FragmentExpression.doCreateExecutedFragmentExpression(FragmentExpression.java:471)
+	at org.thymeleaf.standard.expression.FragmentExpression.createExecutedFragmentExpression(FragmentExpression.java:426)
+	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.computeFragment(AbstractStandardFragmentInsertionTagProcessor.java:359)
+	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.doProcess(AbstractStandardFragmentInsertionTagProcessor.java:110)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 53 common frames omitted
+Caused by: org.attoparser.ParseException: (Line = 122, Column = 114) Malformed markup: Attribute "checked" appears more than once in element
+	at org.attoparser.MarkupEventProcessorHandler.handleAttribute(MarkupEventProcessorHandler.java:549)
+	at org.attoparser.ParsingAttributeSequenceUtil.parseAttributeSequence(ParsingAttributeSequenceUtil.java:220)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:153)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 79 common frames omitted
+
+2020-06-10 09:41:46.686 ERROR 6996 --- [http-nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/admin/blogs-input.html]")] with root cause
+
+org.attoparser.ParseException: (Line = 122, Column = 114) Malformed markup: Attribute "checked" appears more than once in element
+	at org.attoparser.MarkupEventProcessorHandler.handleAttribute(MarkupEventProcessorHandler.java:549)
+	at org.attoparser.ParsingAttributeSequenceUtil.parseAttributeSequence(ParsingAttributeSequenceUtil.java:220)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:153)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseStandalone(TemplateManager.java:302)
+	at org.thymeleaf.standard.expression.FragmentExpression.resolveExecutedFragmentExpression(FragmentExpression.java:588)
+	at org.thymeleaf.standard.expression.FragmentExpression.executeFragmentExpression(FragmentExpression.java:391)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:89)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.expression.FragmentExpression.createExecutedFragmentExpressionParameters(FragmentExpression.java:529)
+	at org.thymeleaf.standard.expression.FragmentExpression.doCreateExecutedFragmentExpression(FragmentExpression.java:471)
+	at org.thymeleaf.standard.expression.FragmentExpression.createExecutedFragmentExpression(FragmentExpression.java:426)
+	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.computeFragment(AbstractStandardFragmentInsertionTagProcessor.java:359)
+	at org.thymeleaf.standard.processor.AbstractStandardFragmentInsertionTagProcessor.doProcess(AbstractStandardFragmentInsertionTagProcessor.java:110)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+2020-06-10 09:43:32.023 DEBUG 6996 --- [http-nio-8080-exec-6] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-10 09:43:32.024 DEBUG 6996 --- [http-nio-8080-exec-6] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-10 09:43:32.031 DEBUG 6996 --- [http-nio-8080-exec-6] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 18
+2020-06-10 09:44:09.404 ERROR 6996 --- [http-nio-8080-exec-7] c.x.b.hander.ControllerExceptionHandler  : Request URL:http://localhost:8080/admin/blogs,Exception:{}
+
+java.lang.NullPointerException: null
+	at com.xinjiang.blog.controller.admin.BlogController.post(BlogController.java:77)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+2020-06-10 09:44:09.429  WARN 6996 --- [http-nio-8080-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.NullPointerException]
+2020-06-10 09:44:26.699 DEBUG 6996 --- [http-nio-8080-exec-6] c.x.b.m.U.findByUsernameAndPassword      : ==>  Preparing: select * from t_user where username=? and password=? 
+2020-06-10 09:44:26.743 DEBUG 6996 --- [http-nio-8080-exec-6] c.x.b.m.U.findByUsernameAndPassword      : ==> Parameters: xinjiang(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-06-10 09:44:26.746 DEBUG 6996 --- [http-nio-8080-exec-6] c.x.b.m.U.findByUsernameAndPassword      : <==      Total: 1
+2020-06-10 09:44:28.597 DEBUG 6996 --- [http-nio-8080-exec-5] c.x.b.m.B.getAllBlogQuery_COUNT          : ==>  Preparing: SELECT count(0) FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id 
+2020-06-10 09:44:28.600 DEBUG 6996 --- [http-nio-8080-exec-5] c.x.b.m.B.getAllBlogQuery_COUNT          : ==> Parameters: 
+2020-06-10 09:44:28.602 DEBUG 6996 --- [http-nio-8080-exec-5] c.x.b.m.B.getAllBlogQuery_COUNT          : <==      Total: 1
+2020-06-10 09:44:28.603 DEBUG 6996 --- [http-nio-8080-exec-5] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id order by update_time desc LIMIT ? 
+2020-06-10 09:44:28.604 DEBUG 6996 --- [http-nio-8080-exec-5] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==> Parameters: 10(Integer)
+2020-06-10 09:44:28.610 DEBUG 6996 --- [http-nio-8080-exec-5] c.x.b.mapper.BlogMapper.getAllBlogQuery  : <==      Total: 5
+2020-06-10 09:44:28.611 DEBUG 6996 --- [http-nio-8080-exec-5] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-10 09:44:28.611 DEBUG 6996 --- [http-nio-8080-exec-5] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-10 09:44:28.614 DEBUG 6996 --- [http-nio-8080-exec-5] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 18
+2020-06-10 09:44:29.819 DEBUG 6996 --- [http-nio-8080-exec-9] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-10 09:44:29.820 DEBUG 6996 --- [http-nio-8080-exec-9] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-10 09:44:29.827 DEBUG 6996 --- [http-nio-8080-exec-9] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 18
+2020-06-10 09:44:39.482 DEBUG 6996 --- [http-nio-8080-exec-3] c.x.blog.mapper.BlogMapper.saveBlog      : ==>  Preparing: insert into blog.t_blog (id,title, content, first_picture, flag, views, comment_count, appreciation, share_statement, commentabled, published, recommend, create_time, update_time, type_id, user_id, description) values (?,?,?,?,?,?,?,?, ?,?,?,?,?, ?,?,?,?); 
+2020-06-10 09:44:39.527 DEBUG 6996 --- [http-nio-8080-exec-3] c.x.blog.mapper.BlogMapper.saveBlog      : ==> Parameters: null, 加油(String), 加油(String), bbb(String), (String), 0(Integer), 0(Integer), true(Boolean), true(Boolean), false(Boolean), false(Boolean), true(Boolean), 2020-06-10 09:44:39.476(Timestamp), 2020-06-10 09:44:39.476(Timestamp), 7(Long), 1(Long), null
+2020-06-10 09:44:39.531 DEBUG 6996 --- [http-nio-8080-exec-3] c.x.blog.mapper.BlogMapper.saveBlog      : <==    Updates: 1
+2020-06-10 09:44:39.565 DEBUG 6996 --- [http-nio-8080-exec-1] c.x.b.m.B.getAllBlogQuery_COUNT          : ==>  Preparing: SELECT count(0) FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id 
+2020-06-10 09:44:39.566 DEBUG 6996 --- [http-nio-8080-exec-1] c.x.b.m.B.getAllBlogQuery_COUNT          : ==> Parameters: 
+2020-06-10 09:44:39.567 DEBUG 6996 --- [http-nio-8080-exec-1] c.x.b.m.B.getAllBlogQuery_COUNT          : <==      Total: 1
+2020-06-10 09:44:39.568 DEBUG 6996 --- [http-nio-8080-exec-1] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id order by update_time desc LIMIT ? 
+2020-06-10 09:44:39.568 DEBUG 6996 --- [http-nio-8080-exec-1] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==> Parameters: 10(Integer)
+2020-06-10 09:44:39.574 DEBUG 6996 --- [http-nio-8080-exec-1] c.x.b.mapper.BlogMapper.getAllBlogQuery  : <==      Total: 6
+2020-06-10 09:44:39.575 DEBUG 6996 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-10 09:44:39.575 DEBUG 6996 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-10 09:44:39.578 DEBUG 6996 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 18
+2020-06-10 09:49:24.549  INFO 10364 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Starting BlogApplication on LAPTOP-8G1SU5VT with PID 10364 (F:\testprojects\xinjiang\target\classes started by 陈智彬 in F:\testprojects\xinjiang)
+2020-06-10 09:49:24.555 DEBUG 10364 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-06-10 09:49:24.576  INFO 10364 --- [restartedMain] com.xinjiang.blog.BlogApplication        : The following profiles are active: dev
+2020-06-10 09:49:24.974  INFO 10364 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-10 09:49:24.976  INFO 10364 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-10 09:49:28.170  INFO 10364 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-10 09:49:28.183  INFO 10364 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-10 09:49:28.184  INFO 10364 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-10 09:49:28.277  INFO 10364 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-10 09:49:28.277  INFO 10364 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3301 ms
+2020-06-10 09:49:29.161  INFO 10364 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-10 09:49:29.257  INFO 10364 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-10 09:49:29.825  INFO 10364 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-06-10 09:49:29.863  INFO 10364 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-10 09:49:29.875  INFO 10364 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Started BlogApplication in 6.407 seconds (JVM running for 8.976)
+2020-06-10 09:49:29.949  INFO 10364 --- [http-nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1574821219,1574821242,1574821265; JSESSIONID=D3F67D0427D7A208EE31CB318A3D2316] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-06-10 09:49:29.958  INFO 10364 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-10 09:49:29.958  INFO 10364 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-10 09:49:29.979  INFO 10364 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 21 ms
+2020-06-10 09:49:33.639  INFO 10364 --- [http-nio-8080-exec-10] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-06-10 09:49:33.645 DEBUG 10364 --- [http-nio-8080-exec-10] c.x.b.m.U.findByUsernameAndPassword      : ==>  Preparing: select * from t_user where username=? and password=? 
+2020-06-10 09:49:33.762 DEBUG 10364 --- [http-nio-8080-exec-10] c.x.b.m.U.findByUsernameAndPassword      : ==> Parameters: xinjiang(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-06-10 09:49:33.789 DEBUG 10364 --- [http-nio-8080-exec-10] c.x.b.m.U.findByUsernameAndPassword      : <==      Total: 1
+2020-06-10 09:49:35.211 DEBUG 10364 --- [http-nio-8080-exec-1] c.x.b.m.B.getAllBlogQuery_COUNT          : ==>  Preparing: SELECT count(0) FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id 
+2020-06-10 09:49:35.215 DEBUG 10364 --- [http-nio-8080-exec-1] c.x.b.m.B.getAllBlogQuery_COUNT          : ==> Parameters: 
+2020-06-10 09:49:35.217 DEBUG 10364 --- [http-nio-8080-exec-1] c.x.b.m.B.getAllBlogQuery_COUNT          : <==      Total: 1
+2020-06-10 09:49:35.223 DEBUG 10364 --- [http-nio-8080-exec-1] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id order by update_time desc LIMIT ? 
+2020-06-10 09:49:35.227 DEBUG 10364 --- [http-nio-8080-exec-1] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==> Parameters: 10(Integer)
+2020-06-10 09:49:35.235 DEBUG 10364 --- [http-nio-8080-exec-1] c.x.b.mapper.BlogMapper.getAllBlogQuery  : <==      Total: 6
+2020-06-10 09:49:35.243 DEBUG 10364 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-10 09:49:35.244 DEBUG 10364 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-10 09:49:35.248 DEBUG 10364 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 18
+2020-06-10 09:49:37.085 DEBUG 10364 --- [http-nio-8080-exec-9] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-10 09:49:37.085 DEBUG 10364 --- [http-nio-8080-exec-9] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-10 09:49:37.093 DEBUG 10364 --- [http-nio-8080-exec-9] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 18
+2020-06-10 09:49:37.094 DEBUG 10364 --- [http-nio-8080-exec-9] c.x.blog.mapper.BlogMapper.getBlogById   : ==>  Preparing: select b.id,b.flag,b.title,b.content,b.type_id, b.first_picture,b.description,b.recommend,b.published,b.share_statement, b.appreciation,b.commentabled from blog.t_blog b where b.id = ?; 
+2020-06-10 09:49:37.099 DEBUG 10364 --- [http-nio-8080-exec-9] c.x.blog.mapper.BlogMapper.getBlogById   : ==> Parameters: 6(Long)
+2020-06-10 09:49:37.102 DEBUG 10364 --- [http-nio-8080-exec-9] c.x.blog.mapper.BlogMapper.getBlogById   : <==      Total: 1
+2020-06-10 09:49:50.853  WARN 10364 --- [http-nio-8080-exec-7] o.springframework.validation.DataBinder  : Skipping URI variable 'id' because request contains bind value with same name.
+2020-06-10 09:49:50.881 DEBUG 10364 --- [http-nio-8080-exec-7] c.x.blog.mapper.BlogMapper.updateBlog    : ==>  Preparing: update blog.t_blog set published = ?,flag = ? , title = ?, content = ?, type_id = ?, first_picture = ? , description = ? , recommend = ? , share_statement = ?, appreciation = ?, commentabled = ? ,update_time = ? where id = ?; 
+2020-06-10 09:49:50.916 DEBUG 10364 --- [http-nio-8080-exec-7] c.x.blog.mapper.BlogMapper.updateBlog    : ==> Parameters: true(Boolean), (String), 加油啊！(String), 加油啊！(String), 6(Long), ccc(String), null, true(Boolean), true(Boolean), true(Boolean), true(Boolean), 2020-06-10 09:49:50.879(Timestamp), 6(Long)
+2020-06-10 09:49:50.918 DEBUG 10364 --- [http-nio-8080-exec-7] c.x.blog.mapper.BlogMapper.updateBlog    : <==    Updates: 1
+2020-06-10 09:49:50.942 DEBUG 10364 --- [http-nio-8080-exec-5] c.x.b.m.B.getAllBlogQuery_COUNT          : ==>  Preparing: SELECT count(0) FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id 
+2020-06-10 09:49:50.942 DEBUG 10364 --- [http-nio-8080-exec-5] c.x.b.m.B.getAllBlogQuery_COUNT          : ==> Parameters: 
+2020-06-10 09:49:50.943 DEBUG 10364 --- [http-nio-8080-exec-5] c.x.b.m.B.getAllBlogQuery_COUNT          : <==      Total: 1
+2020-06-10 09:49:50.945 DEBUG 10364 --- [http-nio-8080-exec-5] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id order by update_time desc LIMIT ? 
+2020-06-10 09:49:50.945 DEBUG 10364 --- [http-nio-8080-exec-5] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==> Parameters: 10(Integer)
+2020-06-10 09:49:50.949 DEBUG 10364 --- [http-nio-8080-exec-5] c.x.b.mapper.BlogMapper.getAllBlogQuery  : <==      Total: 6
+2020-06-10 09:49:50.950 DEBUG 10364 --- [http-nio-8080-exec-5] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-10 09:49:50.950 DEBUG 10364 --- [http-nio-8080-exec-5] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-10 09:49:50.952 DEBUG 10364 --- [http-nio-8080-exec-5] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 18
+2020-06-10 09:57:47.007  INFO 13680 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Starting BlogApplication on LAPTOP-8G1SU5VT with PID 13680 (F:\testprojects\xinjiang\target\classes started by 陈智彬 in F:\testprojects\xinjiang)
+2020-06-10 09:57:47.012 DEBUG 13680 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-06-10 09:57:47.012  INFO 13680 --- [restartedMain] com.xinjiang.blog.BlogApplication        : The following profiles are active: dev
+2020-06-10 09:57:47.178  INFO 13680 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-10 09:57:47.178  INFO 13680 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-10 09:57:49.223  INFO 13680 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-10 09:57:49.233  INFO 13680 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-10 09:57:49.235  INFO 13680 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-10 09:57:49.351  INFO 13680 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-10 09:57:49.352  INFO 13680 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2173 ms
+2020-06-10 09:57:50.984  INFO 13680 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-10 09:57:51.226  INFO 13680 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-10 09:57:51.626  INFO 13680 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-06-10 09:57:51.671  INFO 13680 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-10 09:57:51.683  INFO 13680 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Started BlogApplication in 5.418 seconds (JVM running for 7.021)
+2020-06-10 09:58:03.738  INFO 13680 --- [http-nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1574821219,1574821242,1574821265; JSESSIONID=F44DFC61E308DC734FB1F4998BDD592E] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-06-10 09:58:03.755  INFO 13680 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-10 09:58:03.755  INFO 13680 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-10 09:58:03.770  INFO 13680 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 15 ms
+2020-06-10 09:58:06.388  INFO 13680 --- [http-nio-8080-exec-5] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-06-10 09:58:06.394 DEBUG 13680 --- [http-nio-8080-exec-5] c.x.b.m.U.findByUsernameAndPassword      : ==>  Preparing: select * from t_user where username=? and password=? 
+2020-06-10 09:58:06.520 DEBUG 13680 --- [http-nio-8080-exec-5] c.x.b.m.U.findByUsernameAndPassword      : ==> Parameters: xinjiang(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-06-10 09:58:06.550 DEBUG 13680 --- [http-nio-8080-exec-5] c.x.b.m.U.findByUsernameAndPassword      : <==      Total: 1
+2020-06-10 09:58:07.454 DEBUG 13680 --- [http-nio-8080-exec-4] c.x.b.m.B.getAllBlogQuery_COUNT          : ==>  Preparing: SELECT count(0) FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id 
+2020-06-10 09:58:07.460 DEBUG 13680 --- [http-nio-8080-exec-4] c.x.b.m.B.getAllBlogQuery_COUNT          : ==> Parameters: 
+2020-06-10 09:58:07.463 DEBUG 13680 --- [http-nio-8080-exec-4] c.x.b.m.B.getAllBlogQuery_COUNT          : <==      Total: 1
+2020-06-10 09:58:07.467 DEBUG 13680 --- [http-nio-8080-exec-4] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id order by update_time desc LIMIT ? 
+2020-06-10 09:58:07.471 DEBUG 13680 --- [http-nio-8080-exec-4] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==> Parameters: 10(Integer)
+2020-06-10 09:58:07.478 DEBUG 13680 --- [http-nio-8080-exec-4] c.x.b.mapper.BlogMapper.getAllBlogQuery  : <==      Total: 6
+2020-06-10 09:58:07.482 DEBUG 13680 --- [http-nio-8080-exec-4] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-10 09:58:07.483 DEBUG 13680 --- [http-nio-8080-exec-4] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-10 09:58:07.487 DEBUG 13680 --- [http-nio-8080-exec-4] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 18
+2020-06-10 09:58:13.495 DEBUG 13680 --- [http-nio-8080-exec-2] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-10 09:58:13.500 DEBUG 13680 --- [http-nio-8080-exec-2] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-10 09:58:13.505 DEBUG 13680 --- [http-nio-8080-exec-2] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 18
+2020-06-10 09:58:31.702 DEBUG 13680 --- [http-nio-8080-exec-8] c.x.blog.mapper.BlogMapper.saveBlog      : ==>  Preparing: insert into blog.t_blog (id,title, content, first_picture, flag, views, comment_count, appreciation, share_statement, commentabled, published, recommend, create_time, update_time, type_id, user_id, description) values (?,?,?,?,?,?,?,?, ?,?,?,?,?, ?,?,?,?); 
+2020-06-10 09:58:31.714 DEBUG 13680 --- [http-nio-8080-exec-8] c.x.blog.mapper.BlogMapper.saveBlog      : ==> Parameters: null, 财富密码(String), 财富密码(String), ddd(String), (String), 0(Integer), 0(Integer), true(Boolean), true(Boolean), true(Boolean), true(Boolean), true(Boolean), 2020-06-10 09:58:31.7(Timestamp), 2020-06-10 09:58:31.7(Timestamp), 8(Long), 1(Long), null
+2020-06-10 09:58:31.716 DEBUG 13680 --- [http-nio-8080-exec-8] c.x.blog.mapper.BlogMapper.saveBlog      : <==    Updates: 1
+2020-06-10 09:58:31.744 DEBUG 13680 --- [http-nio-8080-exec-10] c.x.b.m.B.getAllBlogQuery_COUNT          : ==>  Preparing: SELECT count(0) FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id 
+2020-06-10 09:58:31.744 DEBUG 13680 --- [http-nio-8080-exec-10] c.x.b.m.B.getAllBlogQuery_COUNT          : ==> Parameters: 
+2020-06-10 09:58:31.746 DEBUG 13680 --- [http-nio-8080-exec-10] c.x.b.m.B.getAllBlogQuery_COUNT          : <==      Total: 1
+2020-06-10 09:58:31.747 DEBUG 13680 --- [http-nio-8080-exec-10] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id order by update_time desc LIMIT ? 
+2020-06-10 09:58:31.747 DEBUG 13680 --- [http-nio-8080-exec-10] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==> Parameters: 10(Integer)
+2020-06-10 09:58:31.751 DEBUG 13680 --- [http-nio-8080-exec-10] c.x.b.mapper.BlogMapper.getAllBlogQuery  : <==      Total: 7
+2020-06-10 09:58:31.752 DEBUG 13680 --- [http-nio-8080-exec-10] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-10 09:58:31.752 DEBUG 13680 --- [http-nio-8080-exec-10] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-10 09:58:31.756 DEBUG 13680 --- [http-nio-8080-exec-10] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 18
+2020-06-10 09:59:49.880  INFO 13680 --- [Thread-190] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-10 09:59:49.887  INFO 13680 --- [Thread-190] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-06-10 09:59:50.127  INFO 13680 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Starting BlogApplication on LAPTOP-8G1SU5VT with PID 13680 (F:\testprojects\xinjiang\target\classes started by 陈智彬 in F:\testprojects\xinjiang)
+2020-06-10 09:59:50.127 DEBUG 13680 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-06-10 09:59:50.127  INFO 13680 --- [restartedMain] com.xinjiang.blog.BlogApplication        : The following profiles are active: dev
+2020-06-10 09:59:51.494  INFO 13680 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-10 09:59:51.495  INFO 13680 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-10 09:59:51.496  INFO 13680 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-10 09:59:51.538  INFO 13680 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-10 09:59:51.538  INFO 13680 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1402 ms
+2020-06-10 09:59:52.304  INFO 13680 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-10 09:59:52.344  INFO 13680 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-10 09:59:52.564  INFO 13680 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-06-10 09:59:52.577  INFO 13680 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-10 09:59:52.581  INFO 13680 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Started BlogApplication in 2.501 seconds (JVM running for 127.919)
+2020-06-10 09:59:52.583  INFO 13680 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-06-10 10:00:36.738  INFO 20848 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Starting BlogApplication on LAPTOP-8G1SU5VT with PID 20848 (F:\testprojects\xinjiang\target\classes started by 陈智彬 in F:\testprojects\xinjiang)
+2020-06-10 10:00:36.741 DEBUG 20848 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-06-10 10:00:36.741  INFO 20848 --- [restartedMain] com.xinjiang.blog.BlogApplication        : The following profiles are active: dev
+2020-06-10 10:00:36.797  INFO 20848 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-10 10:00:36.797  INFO 20848 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-10 10:00:38.858  INFO 20848 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-10 10:00:38.875  INFO 20848 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-10 10:00:38.876  INFO 20848 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-10 10:00:39.022  INFO 20848 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-10 10:00:39.022  INFO 20848 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2225 ms
+2020-06-10 10:00:40.043  INFO 20848 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-10 10:00:40.136  INFO 20848 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-10 10:00:40.488  INFO 20848 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-06-10 10:00:40.529  INFO 20848 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-10 10:00:40.539  INFO 20848 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Started BlogApplication in 4.298 seconds (JVM running for 5.415)
+2020-06-10 10:00:58.222  INFO 20848 --- [http-nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1574821219,1574821242,1574821265; JSESSIONID=55AB199B664563BB3D726C61ED6D1CD2] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-06-10 10:00:58.230  INFO 20848 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-10 10:00:58.230  INFO 20848 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-10 10:00:58.244  INFO 20848 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
+2020-06-10 10:01:00.765  INFO 20848 --- [http-nio-8080-exec-8] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-06-10 10:01:00.771 DEBUG 20848 --- [http-nio-8080-exec-8] c.x.b.m.U.findByUsernameAndPassword      : ==>  Preparing: select * from t_user where username=? and password=? 
+2020-06-10 10:01:00.893 DEBUG 20848 --- [http-nio-8080-exec-8] c.x.b.m.U.findByUsernameAndPassword      : ==> Parameters: xinjiang(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-06-10 10:01:00.923 DEBUG 20848 --- [http-nio-8080-exec-8] c.x.b.m.U.findByUsernameAndPassword      : <==      Total: 1
+2020-06-10 10:01:02.866 DEBUG 20848 --- [http-nio-8080-exec-6] c.x.b.m.B.getAllBlogQuery_COUNT          : ==>  Preparing: SELECT count(0) FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id 
+2020-06-10 10:01:02.878 DEBUG 20848 --- [http-nio-8080-exec-6] c.x.b.m.B.getAllBlogQuery_COUNT          : ==> Parameters: 
+2020-06-10 10:01:02.879 DEBUG 20848 --- [http-nio-8080-exec-6] c.x.b.m.B.getAllBlogQuery_COUNT          : <==      Total: 1
+2020-06-10 10:01:02.883 DEBUG 20848 --- [http-nio-8080-exec-6] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id order by update_time desc LIMIT ? 
+2020-06-10 10:01:02.886 DEBUG 20848 --- [http-nio-8080-exec-6] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==> Parameters: 10(Integer)
+2020-06-10 10:01:02.892 DEBUG 20848 --- [http-nio-8080-exec-6] c.x.b.mapper.BlogMapper.getAllBlogQuery  : <==      Total: 7
+2020-06-10 10:01:02.898 DEBUG 20848 --- [http-nio-8080-exec-6] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-10 10:01:02.899 DEBUG 20848 --- [http-nio-8080-exec-6] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-10 10:01:02.904 DEBUG 20848 --- [http-nio-8080-exec-6] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 18
+2020-06-10 10:01:30.631  INFO 20848 --- [Thread-188] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-10 10:01:30.638  INFO 20848 --- [Thread-188] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2020-06-10 10:01:30.950  INFO 20848 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Starting BlogApplication on LAPTOP-8G1SU5VT with PID 20848 (F:\testprojects\xinjiang\target\classes started by 陈智彬 in F:\testprojects\xinjiang)
+2020-06-10 10:01:30.950 DEBUG 20848 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-06-10 10:01:30.951  INFO 20848 --- [restartedMain] com.xinjiang.blog.BlogApplication        : The following profiles are active: dev
+2020-06-10 10:01:31.599  INFO 20848 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-10 10:01:31.599  INFO 20848 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-10 10:01:31.600  INFO 20848 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-10 10:01:31.634  INFO 20848 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-10 10:01:31.635  INFO 20848 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 681 ms
+2020-06-10 10:01:32.229  INFO 20848 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-10 10:01:32.376  INFO 20848 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-10 10:01:33.026  INFO 20848 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-06-10 10:01:33.060  INFO 20848 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-10 10:01:33.083  INFO 20848 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Started BlogApplication in 2.209 seconds (JVM running for 57.958)
+2020-06-10 10:01:33.085  INFO 20848 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-06-10 10:01:33.095  INFO 20848 --- [http-nio-8080-exec-7] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-10 10:01:33.096  INFO 20848 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-10 10:01:33.117  INFO 20848 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed initialization in 21 ms
+2020-06-10 10:01:33.170  INFO 20848 --- [http-nio-8080-exec-7] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} inited
+2020-06-10 10:01:33.174 DEBUG 20848 --- [http-nio-8080-exec-7] c.x.b.m.B.getAllBlogQuery_COUNT          : ==>  Preparing: SELECT count(0) FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id 
+2020-06-10 10:01:33.175 DEBUG 20848 --- [http-nio-8080-exec-7] c.x.b.m.B.getAllBlogQuery_COUNT          : ==> Parameters: 
+2020-06-10 10:01:33.177 DEBUG 20848 --- [http-nio-8080-exec-7] c.x.b.m.B.getAllBlogQuery_COUNT          : <==      Total: 1
+2020-06-10 10:01:33.179 DEBUG 20848 --- [http-nio-8080-exec-7] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id order by update_time desc LIMIT ? 
+2020-06-10 10:01:33.180 DEBUG 20848 --- [http-nio-8080-exec-7] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==> Parameters: 10(Integer)
+2020-06-10 10:01:33.185 DEBUG 20848 --- [http-nio-8080-exec-7] c.x.b.mapper.BlogMapper.getAllBlogQuery  : <==      Total: 7
+2020-06-10 10:01:33.190 DEBUG 20848 --- [http-nio-8080-exec-7] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-10 10:01:33.190 DEBUG 20848 --- [http-nio-8080-exec-7] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-10 10:01:33.195 DEBUG 20848 --- [http-nio-8080-exec-7] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 18
+2020-06-10 10:02:41.194  INFO 9556 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Starting BlogApplication on LAPTOP-8G1SU5VT with PID 9556 (F:\testprojects\xinjiang\target\classes started by 陈智彬 in F:\testprojects\xinjiang)
+2020-06-10 10:02:41.197 DEBUG 9556 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-06-10 10:02:41.198  INFO 9556 --- [restartedMain] com.xinjiang.blog.BlogApplication        : The following profiles are active: dev
+2020-06-10 10:02:41.285  INFO 9556 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-10 10:02:41.286  INFO 9556 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-10 10:02:43.873  INFO 9556 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-10 10:02:43.893  INFO 9556 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-10 10:02:43.894  INFO 9556 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-10 10:02:44.070  INFO 9556 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-10 10:02:44.071  INFO 9556 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2785 ms
+2020-06-10 10:02:45.847  INFO 9556 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-10 10:02:45.963  INFO 9556 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-10 10:02:46.325  INFO 9556 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-06-10 10:02:46.377  INFO 9556 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-10 10:02:46.390  INFO 9556 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Started BlogApplication in 6.003 seconds (JVM running for 7.548)
+2020-06-10 10:02:51.630  INFO 9556 --- [http-nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1574821219,1574821242,1574821265; JSESSIONID=EDB8B1ADAFDDA3CCA07E6F7EBD447859] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-06-10 10:02:51.639  INFO 9556 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-10 10:02:51.639  INFO 9556 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-10 10:02:51.654  INFO 9556 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 15 ms
+2020-06-10 10:02:54.031  INFO 9556 --- [http-nio-8080-exec-4] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-06-10 10:02:54.037 DEBUG 9556 --- [http-nio-8080-exec-4] c.x.b.m.U.findByUsernameAndPassword      : ==>  Preparing: select * from t_user where username=? and password=? 
+2020-06-10 10:02:54.151 DEBUG 9556 --- [http-nio-8080-exec-4] c.x.b.m.U.findByUsernameAndPassword      : ==> Parameters: xinjiang(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-06-10 10:02:54.182 DEBUG 9556 --- [http-nio-8080-exec-4] c.x.b.m.U.findByUsernameAndPassword      : <==      Total: 1
+2020-06-10 10:02:55.314 DEBUG 9556 --- [http-nio-8080-exec-5] c.x.b.m.B.getAllBlogQuery_COUNT          : ==>  Preparing: SELECT count(0) FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id 
+2020-06-10 10:02:55.320 DEBUG 9556 --- [http-nio-8080-exec-5] c.x.b.m.B.getAllBlogQuery_COUNT          : ==> Parameters: 
+2020-06-10 10:02:55.322 DEBUG 9556 --- [http-nio-8080-exec-5] c.x.b.m.B.getAllBlogQuery_COUNT          : <==      Total: 1
+2020-06-10 10:02:55.326 DEBUG 9556 --- [http-nio-8080-exec-5] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id order by update_time desc LIMIT ? 
+2020-06-10 10:02:55.330 DEBUG 9556 --- [http-nio-8080-exec-5] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==> Parameters: 10(Integer)
+2020-06-10 10:02:55.337 DEBUG 9556 --- [http-nio-8080-exec-5] c.x.b.mapper.BlogMapper.getAllBlogQuery  : <==      Total: 7
+2020-06-10 10:02:55.341 DEBUG 9556 --- [http-nio-8080-exec-5] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-10 10:02:55.341 DEBUG 9556 --- [http-nio-8080-exec-5] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-10 10:02:55.346 DEBUG 9556 --- [http-nio-8080-exec-5] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 18
+2020-06-10 10:02:58.070 DEBUG 9556 --- [http-nio-8080-exec-10] c.x.blog.mapper.BlogMapper.deleteBlog    : ==>  Preparing: delete from blog.t_blog where id = ? 
+2020-06-10 10:02:58.078 DEBUG 9556 --- [http-nio-8080-exec-10] c.x.blog.mapper.BlogMapper.deleteBlog    : ==> Parameters: 7(Long)
+2020-06-10 10:02:58.085 DEBUG 9556 --- [http-nio-8080-exec-10] c.x.blog.mapper.BlogMapper.deleteBlog    : <==    Updates: 1
+2020-06-10 10:02:58.152 DEBUG 9556 --- [http-nio-8080-exec-1] c.x.b.m.B.getAllBlogQuery_COUNT          : ==>  Preparing: SELECT count(0) FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id 
+2020-06-10 10:02:58.152 DEBUG 9556 --- [http-nio-8080-exec-1] c.x.b.m.B.getAllBlogQuery_COUNT          : ==> Parameters: 
+2020-06-10 10:02:58.153 DEBUG 9556 --- [http-nio-8080-exec-1] c.x.b.m.B.getAllBlogQuery_COUNT          : <==      Total: 1
+2020-06-10 10:02:58.156 DEBUG 9556 --- [http-nio-8080-exec-1] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id order by update_time desc LIMIT ? 
+2020-06-10 10:02:58.157 DEBUG 9556 --- [http-nio-8080-exec-1] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==> Parameters: 10(Integer)
+2020-06-10 10:02:58.162 DEBUG 9556 --- [http-nio-8080-exec-1] c.x.b.mapper.BlogMapper.getAllBlogQuery  : <==      Total: 6
+2020-06-10 10:02:58.162 DEBUG 9556 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-10 10:02:58.193 DEBUG 9556 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-10 10:02:58.197 DEBUG 9556 --- [http-nio-8080-exec-1] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 18
+2020-06-10 10:14:07.903  INFO 18756 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Starting BlogApplication on LAPTOP-8G1SU5VT with PID 18756 (F:\testprojects\xinjiang\target\classes started by 陈智彬 in F:\testprojects\xinjiang)
+2020-06-10 10:14:07.908 DEBUG 18756 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-06-10 10:14:07.909  INFO 18756 --- [restartedMain] com.xinjiang.blog.BlogApplication        : The following profiles are active: dev
+2020-06-10 10:14:08.004  INFO 18756 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-10 10:14:08.004  INFO 18756 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-10 10:14:09.567  INFO 18756 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-10 10:14:09.577  INFO 18756 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-10 10:14:09.577  INFO 18756 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-10 10:14:09.673  INFO 18756 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-10 10:14:09.673  INFO 18756 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1669 ms
+2020-06-10 10:14:10.590  INFO 18756 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-10 10:14:10.683  INFO 18756 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-10 10:14:11.053  INFO 18756 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-06-10 10:14:11.091  INFO 18756 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-10 10:14:11.103  INFO 18756 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Started BlogApplication in 3.872 seconds (JVM running for 4.99)
+2020-06-10 10:14:16.919  INFO 18756 --- [http-nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1574821219,1574821242,1574821265; JSESSIONID=0797031CA71C697CE3FA9338F6339396] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-06-10 10:14:16.927  INFO 18756 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-10 10:14:16.928  INFO 18756 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-10 10:14:16.941  INFO 18756 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
+2020-06-10 10:14:19.248  INFO 18756 --- [http-nio-8080-exec-1] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-06-10 10:14:19.254 DEBUG 18756 --- [http-nio-8080-exec-1] c.x.b.m.U.findByUsernameAndPassword      : ==>  Preparing: select * from t_user where username=? and password=? 
+2020-06-10 10:14:19.364 DEBUG 18756 --- [http-nio-8080-exec-1] c.x.b.m.U.findByUsernameAndPassword      : ==> Parameters: xinjiang(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-06-10 10:14:19.393 DEBUG 18756 --- [http-nio-8080-exec-1] c.x.b.m.U.findByUsernameAndPassword      : <==      Total: 1
+2020-06-10 10:14:20.236 DEBUG 18756 --- [http-nio-8080-exec-4] c.x.b.m.B.getAllBlogQuery_COUNT          : ==>  Preparing: SELECT count(0) FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id 
+2020-06-10 10:14:20.242 DEBUG 18756 --- [http-nio-8080-exec-4] c.x.b.m.B.getAllBlogQuery_COUNT          : ==> Parameters: 
+2020-06-10 10:14:20.244 DEBUG 18756 --- [http-nio-8080-exec-4] c.x.b.m.B.getAllBlogQuery_COUNT          : <==      Total: 1
+2020-06-10 10:14:20.248 DEBUG 18756 --- [http-nio-8080-exec-4] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id order by update_time desc LIMIT ? 
+2020-06-10 10:14:20.252 DEBUG 18756 --- [http-nio-8080-exec-4] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==> Parameters: 10(Integer)
+2020-06-10 10:14:20.260 DEBUG 18756 --- [http-nio-8080-exec-4] c.x.b.mapper.BlogMapper.getAllBlogQuery  : <==      Total: 6
+2020-06-10 10:14:20.266 DEBUG 18756 --- [http-nio-8080-exec-4] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-10 10:14:20.267 DEBUG 18756 --- [http-nio-8080-exec-4] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-10 10:14:20.271 DEBUG 18756 --- [http-nio-8080-exec-4] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 18
+2020-06-10 10:14:22.057 DEBUG 18756 --- [http-nio-8080-exec-8] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-10 10:14:22.057 DEBUG 18756 --- [http-nio-8080-exec-8] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-10 10:14:22.066 DEBUG 18756 --- [http-nio-8080-exec-8] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 18
+2020-06-10 10:14:27.171 DEBUG 18756 --- [http-nio-8080-exec-5] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-10 10:14:27.177 DEBUG 18756 --- [http-nio-8080-exec-5] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-10 10:14:27.180 DEBUG 18756 --- [http-nio-8080-exec-5] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 18
+2020-06-10 10:14:39.605 DEBUG 18756 --- [http-nio-8080-exec-4] c.x.blog.mapper.BlogMapper.saveBlog      : ==>  Preparing: insert into blog.t_blog (id,title, content, first_picture, flag, views, comment_count, appreciation, share_statement, commentabled, published, recommend, create_time, update_time, type_id, user_id, description) values (?,?,?,?,?,?,?,?, ?,?,?,?,?, ?,?,?,?); 
+2020-06-10 10:14:39.616 DEBUG 18756 --- [http-nio-8080-exec-4] c.x.blog.mapper.BlogMapper.saveBlog      : ==> Parameters: null, 财富密码(String), 财富密码(String), ddd(String), (String), 0(Integer), 0(Integer), true(Boolean), true(Boolean), true(Boolean), true(Boolean), true(Boolean), 2020-06-10 10:14:39.6(Timestamp), 2020-06-10 10:14:39.601(Timestamp), 8(Long), 1(Long), 财富密码(String)
+2020-06-10 10:14:39.619 DEBUG 18756 --- [http-nio-8080-exec-4] c.x.blog.mapper.BlogMapper.saveBlog      : <==    Updates: 1
+2020-06-10 10:14:39.643 DEBUG 18756 --- [http-nio-8080-exec-10] c.x.b.m.B.getAllBlogQuery_COUNT          : ==>  Preparing: SELECT count(0) FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id 
+2020-06-10 10:14:39.644 DEBUG 18756 --- [http-nio-8080-exec-10] c.x.b.m.B.getAllBlogQuery_COUNT          : ==> Parameters: 
+2020-06-10 10:14:39.646 DEBUG 18756 --- [http-nio-8080-exec-10] c.x.b.m.B.getAllBlogQuery_COUNT          : <==      Total: 1
+2020-06-10 10:14:39.647 DEBUG 18756 --- [http-nio-8080-exec-10] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id order by update_time desc LIMIT ? 
+2020-06-10 10:14:39.648 DEBUG 18756 --- [http-nio-8080-exec-10] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==> Parameters: 10(Integer)
+2020-06-10 10:14:39.653 DEBUG 18756 --- [http-nio-8080-exec-10] c.x.b.mapper.BlogMapper.getAllBlogQuery  : <==      Total: 7
+2020-06-10 10:14:39.653 DEBUG 18756 --- [http-nio-8080-exec-10] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-10 10:14:39.653 DEBUG 18756 --- [http-nio-8080-exec-10] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-10 10:14:39.655 DEBUG 18756 --- [http-nio-8080-exec-10] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 18
+2020-06-10 10:29:49.453  INFO 9892 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Starting BlogApplication on LAPTOP-8G1SU5VT with PID 9892 (F:\testprojects\xinjiang\target\classes started by 陈智彬 in F:\testprojects\xinjiang)
+2020-06-10 10:29:49.473 DEBUG 9892 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Running with Spring Boot v2.3.0.RELEASE, Spring v5.2.6.RELEASE
+2020-06-10 10:29:49.473  INFO 9892 --- [restartedMain] com.xinjiang.blog.BlogApplication        : The following profiles are active: dev
+2020-06-10 10:29:49.520  INFO 9892 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-10 10:29:49.521  INFO 9892 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-10 10:29:54.636  INFO 9892 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-10 10:29:54.655  INFO 9892 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-10 10:29:54.655  INFO 9892 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-10 10:29:54.832  INFO 9892 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-10 10:29:54.832  INFO 9892 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5311 ms
+2020-06-10 10:29:56.855  INFO 9892 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-10 10:29:57.316  INFO 9892 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-06-10 10:29:59.014  INFO 9892 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-06-10 10:29:59.348  INFO 9892 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-10 10:29:59.363  INFO 9892 --- [restartedMain] com.xinjiang.blog.BlogApplication        : Started BlogApplication in 11.739 seconds (JVM running for 13.466)
+2020-06-10 10:30:00.138  INFO 9892 --- [http-nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [1574821219,1574821242,1574821265; JSESSIONID=2937CD37DB84F890778809A9526A26E8] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2020-06-10 10:30:00.244  INFO 9892 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-10 10:30:00.245  INFO 9892 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-10 10:30:00.264  INFO 9892 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 19 ms
+2020-06-10 10:30:15.089  INFO 9892 --- [http-nio-8080-exec-7] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-06-10 10:30:15.096 DEBUG 9892 --- [http-nio-8080-exec-7] c.x.b.m.U.findByUsernameAndPassword      : ==>  Preparing: select * from t_user where username=? and password=? 
+2020-06-10 10:30:15.266 DEBUG 9892 --- [http-nio-8080-exec-7] c.x.b.m.U.findByUsernameAndPassword      : ==> Parameters: xinjiang(String), e10adc3949ba59abbe56e057f20f883e(String)
+2020-06-10 10:30:15.511 DEBUG 9892 --- [http-nio-8080-exec-7] c.x.b.m.U.findByUsernameAndPassword      : <==      Total: 1
+2020-06-10 10:30:17.052 DEBUG 9892 --- [http-nio-8080-exec-6] c.x.b.m.B.getAllBlogQuery_COUNT          : ==>  Preparing: SELECT count(0) FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id 
+2020-06-10 10:30:17.151 DEBUG 9892 --- [http-nio-8080-exec-6] c.x.b.m.B.getAllBlogQuery_COUNT          : ==> Parameters: 
+2020-06-10 10:30:17.153 DEBUG 9892 --- [http-nio-8080-exec-6] c.x.b.m.B.getAllBlogQuery_COUNT          : <==      Total: 1
+2020-06-10 10:30:17.176 DEBUG 9892 --- [http-nio-8080-exec-6] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id order by update_time desc LIMIT ? 
+2020-06-10 10:30:17.192 DEBUG 9892 --- [http-nio-8080-exec-6] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==> Parameters: 10(Integer)
+2020-06-10 10:30:17.207 DEBUG 9892 --- [http-nio-8080-exec-6] c.x.b.mapper.BlogMapper.getAllBlogQuery  : <==      Total: 7
+2020-06-10 10:30:17.213 DEBUG 9892 --- [http-nio-8080-exec-6] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-10 10:30:17.213 DEBUG 9892 --- [http-nio-8080-exec-6] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-10 10:30:17.218 DEBUG 9892 --- [http-nio-8080-exec-6] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 18
+2020-06-10 10:30:19.091 DEBUG 9892 --- [http-nio-8080-exec-3] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-10 10:30:19.091 DEBUG 9892 --- [http-nio-8080-exec-3] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-10 10:30:19.095 DEBUG 9892 --- [http-nio-8080-exec-3] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 18
+2020-06-10 10:30:19.098 DEBUG 9892 --- [http-nio-8080-exec-3] c.x.blog.mapper.BlogMapper.getBlogById   : ==>  Preparing: select b.id,b.flag,b.title,b.content,b.type_id, b.first_picture,b.description,b.recommend,b.published,b.share_statement, b.appreciation,b.commentabled from blog.t_blog b where b.id = ?; 
+2020-06-10 10:30:19.102 DEBUG 9892 --- [http-nio-8080-exec-3] c.x.blog.mapper.BlogMapper.getBlogById   : ==> Parameters: 8(Long)
+2020-06-10 10:30:19.108 DEBUG 9892 --- [http-nio-8080-exec-3] c.x.blog.mapper.BlogMapper.getBlogById   : <==      Total: 1
+2020-06-10 10:30:25.113  WARN 9892 --- [http-nio-8080-exec-1] o.springframework.validation.DataBinder  : Skipping URI variable 'id' because request contains bind value with same name.
+2020-06-10 10:30:25.138 DEBUG 9892 --- [http-nio-8080-exec-1] c.x.blog.mapper.BlogMapper.updateBlog    : ==>  Preparing: update blog.t_blog set published = ?,flag = ? , title = ?, content = ?, type_id = ?, first_picture = ? , description = ? , recommend = ? , share_statement = ?, appreciation = ?, commentabled = ? ,update_time = ? where id = ?; 
+2020-06-10 10:30:25.165 DEBUG 9892 --- [http-nio-8080-exec-1] c.x.blog.mapper.BlogMapper.updateBlog    : ==> Parameters: true(Boolean), (String), 财富密码1(String), 财富密码(String), 8(Long), ddd(String), 财富密码(String), true(Boolean), true(Boolean), true(Boolean), true(Boolean), 2020-06-10 10:30:25.134(Timestamp), 8(Long)
+2020-06-10 10:30:25.201 DEBUG 9892 --- [http-nio-8080-exec-1] c.x.blog.mapper.BlogMapper.updateBlog    : <==    Updates: 1
+2020-06-10 10:30:25.249 DEBUG 9892 --- [http-nio-8080-exec-7] c.x.b.m.B.getAllBlogQuery_COUNT          : ==>  Preparing: SELECT count(0) FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id 
+2020-06-10 10:30:25.250 DEBUG 9892 --- [http-nio-8080-exec-7] c.x.b.m.B.getAllBlogQuery_COUNT          : ==> Parameters: 
+2020-06-10 10:30:25.269 DEBUG 9892 --- [http-nio-8080-exec-7] c.x.b.m.B.getAllBlogQuery_COUNT          : <==      Total: 1
+2020-06-10 10:30:25.271 DEBUG 9892 --- [http-nio-8080-exec-7] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id order by update_time desc LIMIT ? 
+2020-06-10 10:30:25.271 DEBUG 9892 --- [http-nio-8080-exec-7] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==> Parameters: 10(Integer)
+2020-06-10 10:30:25.276 DEBUG 9892 --- [http-nio-8080-exec-7] c.x.b.mapper.BlogMapper.getAllBlogQuery  : <==      Total: 7
+2020-06-10 10:30:25.277 DEBUG 9892 --- [http-nio-8080-exec-7] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-10 10:30:25.278 DEBUG 9892 --- [http-nio-8080-exec-7] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-10 10:30:25.280 DEBUG 9892 --- [http-nio-8080-exec-7] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 18
+2020-06-10 10:30:33.089 DEBUG 9892 --- [http-nio-8080-exec-10] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-10 10:30:33.090 DEBUG 9892 --- [http-nio-8080-exec-10] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-10 10:30:33.093 DEBUG 9892 --- [http-nio-8080-exec-10] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 18
+2020-06-10 10:30:33.094 DEBUG 9892 --- [http-nio-8080-exec-10] c.x.blog.mapper.BlogMapper.getBlogById   : ==>  Preparing: select b.id,b.flag,b.title,b.content,b.type_id, b.first_picture,b.description,b.recommend,b.published,b.share_statement, b.appreciation,b.commentabled from blog.t_blog b where b.id = ?; 
+2020-06-10 10:30:33.095 DEBUG 9892 --- [http-nio-8080-exec-10] c.x.blog.mapper.BlogMapper.getBlogById   : ==> Parameters: 8(Long)
+2020-06-10 10:30:33.097 DEBUG 9892 --- [http-nio-8080-exec-10] c.x.blog.mapper.BlogMapper.getBlogById   : <==      Total: 1
+2020-06-10 10:30:39.986  WARN 9892 --- [http-nio-8080-exec-2] o.springframework.validation.DataBinder  : Skipping URI variable 'id' because request contains bind value with same name.
+2020-06-10 10:30:39.988 DEBUG 9892 --- [http-nio-8080-exec-2] c.x.blog.mapper.BlogMapper.updateBlog    : ==>  Preparing: update blog.t_blog set published = ?,flag = ? , title = ?, content = ?, type_id = ?, first_picture = ? , description = ? , recommend = ? , share_statement = ?, appreciation = ?, commentabled = ? ,update_time = ? where id = ?; 
+2020-06-10 10:30:39.989 DEBUG 9892 --- [http-nio-8080-exec-2] c.x.blog.mapper.BlogMapper.updateBlog    : ==> Parameters: false(Boolean), (String), 财富密码(String), 财富密码(String), 8(Long), ddd(String), 财富密码(String), true(Boolean), true(Boolean), true(Boolean), true(Boolean), 2020-06-10 10:30:39.988(Timestamp), 8(Long)
+2020-06-10 10:30:40.004 DEBUG 9892 --- [http-nio-8080-exec-2] c.x.blog.mapper.BlogMapper.updateBlog    : <==    Updates: 1
+2020-06-10 10:30:40.023 DEBUG 9892 --- [http-nio-8080-exec-9] c.x.b.m.B.getAllBlogQuery_COUNT          : ==>  Preparing: SELECT count(0) FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id 
+2020-06-10 10:30:40.023 DEBUG 9892 --- [http-nio-8080-exec-9] c.x.b.m.B.getAllBlogQuery_COUNT          : ==> Parameters: 
+2020-06-10 10:30:40.025 DEBUG 9892 --- [http-nio-8080-exec-9] c.x.b.m.B.getAllBlogQuery_COUNT          : <==      Total: 1
+2020-06-10 10:30:40.027 DEBUG 9892 --- [http-nio-8080-exec-9] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id order by update_time desc LIMIT ? 
+2020-06-10 10:30:40.028 DEBUG 9892 --- [http-nio-8080-exec-9] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==> Parameters: 10(Integer)
+2020-06-10 10:30:40.037 DEBUG 9892 --- [http-nio-8080-exec-9] c.x.b.mapper.BlogMapper.getAllBlogQuery  : <==      Total: 7
+2020-06-10 10:30:40.038 DEBUG 9892 --- [http-nio-8080-exec-9] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-10 10:30:40.038 DEBUG 9892 --- [http-nio-8080-exec-9] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-10 10:30:40.043 DEBUG 9892 --- [http-nio-8080-exec-9] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 18
+2020-06-10 10:30:42.762 DEBUG 9892 --- [http-nio-8080-exec-5] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-10 10:30:42.763 DEBUG 9892 --- [http-nio-8080-exec-5] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-10 10:30:42.770 DEBUG 9892 --- [http-nio-8080-exec-5] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 18
+2020-06-10 10:30:42.773 DEBUG 9892 --- [http-nio-8080-exec-5] c.x.blog.mapper.BlogMapper.getBlogById   : ==>  Preparing: select b.id,b.flag,b.title,b.content,b.type_id, b.first_picture,b.description,b.recommend,b.published,b.share_statement, b.appreciation,b.commentabled from blog.t_blog b where b.id = ?; 
+2020-06-10 10:30:42.774 DEBUG 9892 --- [http-nio-8080-exec-5] c.x.blog.mapper.BlogMapper.getBlogById   : ==> Parameters: 8(Long)
+2020-06-10 10:30:42.776 DEBUG 9892 --- [http-nio-8080-exec-5] c.x.blog.mapper.BlogMapper.getBlogById   : <==      Total: 1
+2020-06-10 10:30:45.782  WARN 9892 --- [http-nio-8080-exec-1] o.springframework.validation.DataBinder  : Skipping URI variable 'id' because request contains bind value with same name.
+2020-06-10 10:30:45.788 DEBUG 9892 --- [http-nio-8080-exec-1] c.x.blog.mapper.BlogMapper.updateBlog    : ==>  Preparing: update blog.t_blog set published = ?,flag = ? , title = ?, content = ?, type_id = ?, first_picture = ? , description = ? , recommend = ? , share_statement = ?, appreciation = ?, commentabled = ? ,update_time = ? where id = ?; 
+2020-06-10 10:30:45.789 DEBUG 9892 --- [http-nio-8080-exec-1] c.x.blog.mapper.BlogMapper.updateBlog    : ==> Parameters: true(Boolean), (String), 财富密码(String), 财富密码(String), 8(Long), ddd(String), 财富密码(String), true(Boolean), true(Boolean), true(Boolean), true(Boolean), 2020-06-10 10:30:45.787(Timestamp), 8(Long)
+2020-06-10 10:30:45.813 DEBUG 9892 --- [http-nio-8080-exec-1] c.x.blog.mapper.BlogMapper.updateBlog    : <==    Updates: 1
+2020-06-10 10:30:45.829 DEBUG 9892 --- [http-nio-8080-exec-7] c.x.b.m.B.getAllBlogQuery_COUNT          : ==>  Preparing: SELECT count(0) FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id 
+2020-06-10 10:30:45.829 DEBUG 9892 --- [http-nio-8080-exec-7] c.x.b.m.B.getAllBlogQuery_COUNT          : ==> Parameters: 
+2020-06-10 10:30:45.830 DEBUG 9892 --- [http-nio-8080-exec-7] c.x.b.m.B.getAllBlogQuery_COUNT          : <==      Total: 1
+2020-06-10 10:30:45.832 DEBUG 9892 --- [http-nio-8080-exec-7] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==>  Preparing: SELECT b.id, b.title, b.update_time, b.recommend, b.published, b.type_id, t.id, t.name FROM blog.t_blog b LEFT OUTER JOIN blog.t_type t ON b.type_id = t.id order by update_time desc LIMIT ? 
+2020-06-10 10:30:45.832 DEBUG 9892 --- [http-nio-8080-exec-7] c.x.b.mapper.BlogMapper.getAllBlogQuery  : ==> Parameters: 10(Integer)
+2020-06-10 10:30:45.837 DEBUG 9892 --- [http-nio-8080-exec-7] c.x.b.mapper.BlogMapper.getAllBlogQuery  : <==      Total: 7
+2020-06-10 10:30:45.838 DEBUG 9892 --- [http-nio-8080-exec-7] c.x.blog.mapper.TypeMapper.getAllType    : ==>  Preparing: select * from t_type 
+2020-06-10 10:30:45.838 DEBUG 9892 --- [http-nio-8080-exec-7] c.x.blog.mapper.TypeMapper.getAllType    : ==> Parameters: 
+2020-06-10 10:30:45.840 DEBUG 9892 --- [http-nio-8080-exec-7] c.x.blog.mapper.TypeMapper.getAllType    : <==      Total: 18
